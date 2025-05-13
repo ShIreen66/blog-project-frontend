@@ -4,6 +4,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
       
+      
       {/* Left Section */}
       <div className="md:w-1/2 w-full flex flex-col items-center justify-center text-center p-10 bg-white bg-[url('')]">
         <img src="" className="w-48 h-48 object-cover mb-6" />
