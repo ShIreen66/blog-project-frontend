@@ -1,11 +1,48 @@
-import React from 'react'
+import React from 'react';
 
 const SignUp = () => {
   return (
-    <div>
-      <h1 className='text-red-800'>Register</h1>
-    </div>
-  )
-}
+    <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
+      
+      {/* Left Section */}
+      <div className="md:w-1/2 w-full flex flex-col items-center justify-center text-center p-10 bg-white bg-[url('')]">
+        <img src="" className="w-48 h-48 object-cover mb-6" />
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi quos deleniti sit?
+        </h1>
+        <p className="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <small className="text-gray-500 mb-2">Have an account?</small>
+        <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+          Login
+        </button>
+      </div>
 
-export default SignUp
+      {/* Right Section */}
+      <div className="md:w-1/2 w-full flex flex-col justify-center p-10 bg-white">
+        <h1 className="text-3xl font-semibold text-center text-gray-800 mb-6">Let Us Know You!</h1>
+        <form className="flex flex-col gap-4 max-w-md mx-auto w-full">
+          <input
+            type="text"
+            placeholder="Enter Name"
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <input
+            type="email"
+            placeholder="Enter Email"
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;
