@@ -1,15 +1,9 @@
-import React from 'react'
-// import Routes from './Routes/Routes'
-import SignUp from './pages/user/SignUp'
+import React from "react";
+import SignUp from "./pages/user/SignUp";
+import MainRoute from "./Routes/MainRoute";
 
 const App = () => {
-  return (
-  //  <Routes/>
-  <div>
+  return <MainRoute/>;
+};
 
-    <SignUp/>
-  </div>
-  )
-}
-
-export default App
+export default App;
