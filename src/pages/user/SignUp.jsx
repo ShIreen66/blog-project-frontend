@@ -1,8 +1,6 @@
-import React from 'react';
-
 const SignUp = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen h-300px flex items-center justify-center bg-gray-100 p-4">
       <div className="flex flex-col md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
         
         {/* Left Section */}
@@ -26,14 +24,14 @@ const SignUp = () => {
             <h2 className="text-2xl font-semibold">Let Us Know You!</h2>
           </div>
           <form className="flex flex-col gap-4">
-            <input
-              type="email"
-              placeholder="Enter Your Email"
+             <input
+              type="text"
+              placeholder="Enter Username"
               className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <input
-              type="text"
-              placeholder="Enter Username"
+              type="email"
+              placeholder="Enter Your Email"
               className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <input
