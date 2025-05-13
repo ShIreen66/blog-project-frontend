@@ -1,11 +1,14 @@
 import React from 'react'
+// import Routes from './Routes/Routes'
+import SignUp from './pages/user/SignUp'
 
 const App = () => {
   return (
-    <div>
- <h1 className='text-3xl text-gray-800'>Blog Project</h1>
+  //  <Routes/>
+  <div>
 
-    </div>
+    <SignUp/>
+  </div>
   )
 }
 
