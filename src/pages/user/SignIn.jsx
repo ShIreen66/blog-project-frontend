@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <>
     <main>
@@ -23,4 +23,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn
