@@ -1,15 +1,14 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import HomeFeed from '../pages/user/HomeFeed'
-import SignUp from '../pages/user/SignUp'
-import SignIn from '../pages/user/SignIn'
+import Register from '../pages/user/Register'
+import Login from '../pages/user/Login'
 
 const MainRoute = () => {
   return (
   <Routes>
     <Route path="/" element={<HomeFeed />} />
-    <Route path="/signup" element={<SignUp />} />
-    <Route path="/signin" element={<SignIn/>} />
+    <Route path="/signup" element={<Register />} />
+    <Route path="/signin" element={<Login/>} />
     
   </Routes>
   )
