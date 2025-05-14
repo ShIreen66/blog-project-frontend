@@ -1,8 +1,16 @@
-import React from 'react'
+import HeroSection from "../../component/HeroSection"
+import Navigation from "../../component/Navigation"
 
 const HomeFeed = () => {
   return (
-    <div>HomeFeed</div>
+    <div className="h-screen w-screen  flex">
+      <div className="h-full w-[20%] ">
+<Navigation/>
+      </div>
+      <div className="h-full w-[80%] ">
+        <HeroSection/>
+      </div>
+    </div>
   )
 }
 
