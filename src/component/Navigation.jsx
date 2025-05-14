@@ -2,29 +2,29 @@ import "remixicon/fonts/remixicon.css";
 
 const Navigation = () => {
   return (
-    <div className="w-full h-full bg-yellow-200 text-black p-5 flex flex-col  justify-between">
+    <div className="w-full h-full bg-gray-100 text-black p-5 flex flex-col  justify-between">
       
-        <div className="top w-full h-20 bg-red-200">Lorem.</div>
+        <div className="top w-full h-20">Lorem.</div>
         <div>
-        <ul className="bg-green-200 p-2 text-lg  ">
+        <ul className=" p-2 text-lg  ">
           <li className="flex gap-3 items-center">
             <i className="ri-home-8-line text-2xl"></i>
             <p className="font-medium">Home</p>
           </li>
         </ul>
-        <ul className="bg-green-200 p-2  text-lg">
+        <ul className=" p-2  text-lg">
           <li className="flex gap-4 items-center">
             <i className="ri-blogger-line text-2xl"></i>
             <p className="font-medium">Blogs</p>
           </li>
         </ul>
-        <ul className="bg-green-200 p-2 text-lg">
+        <ul className=" p-2 text-lg">
           <li className="flex gap-4 items-center">
             <i className="ri-information-fill text-2xl"></i>
             <p className="font-medium">About Us</p>
           </li>
         </ul>
-        <ul className="bg-green-200 p-2 text-lg">
+        <ul className=" p-2 text-lg">
           <li className="flex gap-4 items-center">
             <i className="ri-contacts-book-3-fill text-2xl"></i>
             <p className="font-medium">Contact Us</p>
@@ -32,7 +32,7 @@ const Navigation = () => {
         </ul>
         </div>
       
-      <div className="w-full h-15 bg-red-300 flex justify-center items-center  ">
+      <div className="w-full h-15  flex justify-center items-center  ">
         {/* <button className="h-[80%] bg-green-300 rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
           Login <i class="ri-arrow-right-line"></i>
         </button> */}

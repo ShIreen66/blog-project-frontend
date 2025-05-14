@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -32,7 +31,9 @@ const Login = () => {
         {/* Right Section */}
         <div className="md:w-1/2 w-full p-8 bg-gray-50 flex flex-col justify-center">
           <div className="text-center mb-6">
-            <h2 className="text-4xl font-extrabold  font-[SUSE]">Welcome Back!</h2>
+            <h2 className="text-4xl font-extrabold  font-[SUSE]">
+              Welcome Back!
+            </h2>
           </div>
           <form className="flex flex-col gap-4">
             <input

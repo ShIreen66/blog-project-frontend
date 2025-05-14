@@ -1,17 +1,17 @@
-import HeroSection from "../../component/HeroSection"
-import Navigation from "../../component/Navigation"
+import HeroSection from "../../component/HeroSection";
+import Navigation from "../../component/Navigation";
 
 const HomeFeed = () => {
   return (
     <div className="h-screen w-screen  flex">
       <div className="h-full w-[20%] ">
-<Navigation/>
+        <Navigation />
       </div>
       <div className="h-full w-[80%] ">
-        <HeroSection/>
+        <HeroSection />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeFeed
+export default HomeFeed;
