@@ -7,7 +7,7 @@ return (
     <div className="h-screen flex items-center justify-center bg-gray-900 p-4">
       <div className="min-h-2/3 flex flex-col  md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
         {/* Left Section */}
-        <div className="md:w-1/2 bg-[url('https://images.unsplash.com/photo-1744029829181-ad19c2ee248b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8')] bg-cover bg-center text-white flex flex-col justify-between p-8">
+        <div className="md:w-1/2 bg-[url('https://images.unsplash.com/photo-1744029829181-ad19c2ee248b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8')] bg-cover bg-center text-white flex flex-col justify-around p-8">
           <div>
             <h1 className="text-3xl font-bold leading-tight mb-2 text-center">
               Lorem, ipsum dolor.
@@ -18,9 +18,9 @@ return (
               Lorem ipsum dolor sit amet.
             </p>
           </div>
-          <div>
-            <p className="text-sm text-center text-black">Have an account?</p>
-            <Link to="/signin" className="mt-2 px-6 py-2 ml-45 bg-white text-black rounded-lg font-semibold text-center  hover:bg-gray-200  ">
+          <div className='h-20 flex flex-col justify-center items-center gap-2'>
+            <p className="text-sm text-center font-medium text-white  ">Have an Account ?</p>
+            <Link to="/signin" className=" px-10 py-2   bg-white text-black rounded-lg font-semibold text-center  hover:bg-gray-200  ">
               Login
             </Link>
           </div>
