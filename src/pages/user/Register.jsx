@@ -17,12 +17,12 @@ const Register = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[#0000009c] object-cover z-10"></div>
 
           <div className="z-10">
-            <h1 className="text-3xl font-bold leading-tight mb-2 text-center">
+            <h1 className="text-3xl font-bold leading-tight mb-2 text-center font-[SUSE]">
               Lorem, ipsum dolor.
               <br />
               Lorem, ipsum.
             </h1>
-            <p className="text-sm text-gray-200 text-center">
+            <p className="text-sm text-gray-200 text-center font-[SUSE]">
               Lorem ipsum dolor sit amet.
             </p>
           </div>
