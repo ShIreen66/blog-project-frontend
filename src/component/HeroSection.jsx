@@ -10,6 +10,7 @@ const HeroSection = () => {
         <i class="ri-search-line h-full aspect-square bg-gray-400 text-3xl text-white p-2"></i>{" "}
         <input type="text" className="outline-hidden w-full h-full text-xl px-5" placeholder="Search our Blog by topics or keywords..." />
       </div>
+      div
     </div>
   );
 };

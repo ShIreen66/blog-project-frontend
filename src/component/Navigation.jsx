@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 
 const Navigation = () => {
@@ -33,16 +34,16 @@ const Navigation = () => {
         </div>
       
       <div className="w-full h-15  flex justify-center items-center  ">
-        {/* <button className="h-[80%] bg-green-300 rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
-          Login <i class="ri-arrow-right-line"></i>
-        </button> */}
-        <div className="w-full h-full flex  items-center justify-center gap-4">
+        <Link to={"signup"} className="h-[80%] bg-green-300 rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
+          Signup <i class="ri-arrow-right-line"></i>
+        </Link>
+        {/* <div className="w-full h-full flex  items-center justify-center gap-4">
           <img
             src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww"
             className="h-[70%] aspect-square rounded-full object-cover"
           ></img>
           <p className="font-medium">Umashankar Uikey</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
