@@ -1,9 +1,19 @@
 import React from 'react'
+import Navigation from '../../component/Navigation';
+import ProfilePage from '../../component/ProfilePage';
+import { Outlet } from 'react-router-dom';
 
 const UserDashboard = () => {
-  return (
-    <div>UserDashboard</div>
-  )
+   return (
+    <div className="h-screen w-screen  flex">
+      <div className="h-full w-[20%] ">
+        <Navigation />
+      </div>
+      <div className="h-full w-[80%] ">
+        <Outlet/>
+      </div>
+    </div>
+  );
 }
 
 export default UserDashboard

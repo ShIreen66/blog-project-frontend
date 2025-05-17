@@ -35,7 +35,7 @@ const Navigation = () => {
       
       <div className="w-full h-15  flex justify-center items-center  ">
         <Link to={"signup"} className="h-[80%] bg-green-300 rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
-          Signup <i class="ri-arrow-right-line"></i>
+          Signup <i className="ri-arrow-right-line"></i>
         </Link>
         {/* <div className="w-full h-full flex  items-center justify-center gap-4">
           <img

@@ -17,13 +17,13 @@ const Login = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[#0000009c] object-cover z-10"></div>
 
           <div className="z-10">
-            <h1 className="text-3xl font-bold leading-tight mb-2 text-center font-[SUSE]">
-              Lorem, ipsum dolor.
+            <h1 className="text-4xl font-bold leading-tight mb-2 text-center font-[SUSE]">
+              Because every thought 
               <br />
-              Lorem, ipsum.
+              deserves a platform
             </h1>
-            <p className="text-sm text-gray-200 text-center font-[SUSE]">
-              Lorem ipsum dolor sit amet.
+            <p className="text-lg text-gray-200 text-center font-[SUSE]">
+              Blogging beyond borders.
             </p>
           </div>
           <div className="z-10 flex flex-col justify-center gap-2">
@@ -63,7 +63,7 @@ const Login = () => {
               Login →
             </button>
             <p className="text-center font-medium text-lg ">OR</p>
-            <button className="p-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2">
+            <button className="p-1 rounded-lg border   cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2">
               <img className="h-12 rounded-full" src="/google_icon.png" alt="" /><p>continue with Google</p>
             </button>
           </form>
