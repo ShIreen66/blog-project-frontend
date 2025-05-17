@@ -1,6 +1,7 @@
 import React from 'react'
 import Navigation from '../../component/Navigation';
 import ProfilePage from '../../component/ProfilePage';
+import { Outlet } from 'react-router-dom';
 
 const UserDashboard = () => {
    return (
@@ -9,10 +10,10 @@ const UserDashboard = () => {
         <Navigation />
       </div>
       <div className="h-full w-[80%] ">
-        <ProfilePage />
+        <Outlet/>
       </div>
     </div>
-  );vvv
+  );
 }
 
 export default UserDashboard
