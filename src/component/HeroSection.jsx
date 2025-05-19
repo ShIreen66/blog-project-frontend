@@ -1,9 +1,10 @@
 import CardHeroSection from "./CardHeroSection";
+import Footer from "./Footer";
 import SmallHero from "./SmallHero";
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-full  border  p-7 overflow-x-hidden">
+    <div className="w-full h-full  border   overflow-x-hidden">
       <h1 className="text-center text-3xl font-medium">Our Blogs</h1>
       <p className="text-center my-4">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed?
@@ -45,39 +46,39 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="w-full min-h-screen  flex  flex-wrap gap-13 p-7">
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-        <CardHeroSection/>
-  
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
+        <CardHeroSection />
       </div>
+      <Footer />
     </div>
   );
 };
