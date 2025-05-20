@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Card = () => {
   return (
@@ -17,7 +17,7 @@ const Card = () => {
               Bhopal
             </p>
           </div>
-          <button className="border border-blue-500 text-blue-500 text-sm px-4 py-1 rounded-full hover:bg-blue-50 transition-all">
+          <button className="border border-blue-500 text-violet-500 text-sm px-4 py-1 rounded-full hover:bg-blue-50 transition-all">
             Follower
           </button>
         </div>     

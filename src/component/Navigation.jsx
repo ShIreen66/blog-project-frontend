@@ -3,9 +3,9 @@ import "remixicon/fonts/remixicon.css";
 
 const Navigation = () => {
   return (
-    <div className="w-full h-full bg-gray-100 text-black p-5 flex flex-col  justify-between">
+    <div className="w-full h-full bg-violet-100 text-black p-5 flex flex-col  justify-between">
       
-        <div className="top w-full h-20">Lorem.</div>
+        <div className="top w-full h-20 text-5xl p-9">Logo</div>
         <div>
         <ul className=" p-2 text-lg  ">
           <li className="flex gap-3 items-center">
@@ -34,7 +34,7 @@ const Navigation = () => {
         </div>
       
       <div className="w-full h-15  flex justify-center items-center  ">
-        <Link to={"signup"} className="h-[80%] bg-green-300 rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
+        <Link to={"signup"} className="h-[80%] bg-violet-500 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto">
           Signup <i className="ri-arrow-right-line"></i>
         </Link>
         {/* <div className="w-full h-full flex  items-center justify-center gap-4">

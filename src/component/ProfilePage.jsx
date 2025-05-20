@@ -1,62 +1,56 @@
 import { Outlet } from "react-router-dom";
-import Follower from "./Following";
-
 
 const ProfilePage = () => {
   return (
-    <div className="h-full w-full  overflow-y-auto">
-      <div className="bg-gray-300 w-full h-50 px-30 flex">
-        <div className="left h-full w-[30%] flex flex-col justify-center items-center gap-3">
+    <div className="h-full w-full overflow-y-auto bg-white">
+      
+      <div className="bg-violet-200 w-full px-10 py-8 flex flex-col md:flex-row items-center md:items-start gap-6">
+        
+        <div className="left w-32 h-32 md:w-40 md:h-40 ml-60">
           <img
             src="/premium_photo.avif"
-            alt=""
-            className="w-[60%] aspect-square rounded-full object-cover"
+            alt="Profile"
+            className="w-full h-full rounded-full object-cover border-2 border-green-100 "
           />
         </div>
 
-        <div className="right h-full w-[60%] flex flex-col justify-center  items-center ">
-          <div className="w-full h-full flex justify-center gap-5  items-center">
-            <h3 className="font-medium font-[SUSE] text-2xl ">John Doe</h3>
-            <button className="bg-transparent border-2 rounded-4xl h-10 w-25 my-3 mt-3 font-medium  ">
-              Edit Profile{" "}
+        
+        <div className="flex-1 flex flex-col items-center md:items-start gap-4">
+          
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <h3 className="text-2xl font-semibold">John Doe</h3>
+            <button className="border rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
+              Edit Profile
             </button>
-            <button className="bg-transparent border-2 rounded-4xl h-10 w-25 my-3 mt-3 font-medium ">
+            <button className="border rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
               View Archive
             </button>
-            <p className="rounded-full border-2 object-cover aspect-square h-10 mx-6 my-4  flex justify-center items-center">
-              <i className="ri-user-settings-line text-2xl"></i>
-            </p>
+            <button className="w-10 h-10 border rounded-full flex items-center justify-center hover:bg-gray-100">
+              <i className="ri-user-settings-line text-xl"></i>
+            </button>
           </div>
 
-          <div className="w-full h-full flex justify-center gap-5 items-center">
-            <p className="text-lg">
-              <p className="text-lg bg-gray-800 text-white text-center rounded-4xl ">
-                0
-              </p>
-              posts
-            </p>
-            <p className="text-lg">
-              <p className="text-lg bg-gray-800 text-white text-center rounded-4xl cursor-pointer">
-                0
-              </p>
-              followers
-            </p>
-            <p className="text-lg">
-              <p className="text-lg bg-gray-800 text-white text-center rounded-4xl cursor-pointer">
-                0
-              </p>
-              followings
-            </p>
+          
+          <div className="flex gap-6 ml-18 mt-5 ">
+            {["posts", "followers", "followings"].map((label, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <span className="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">
+                  0
+                </span>
+                <span className="text-sm">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="w-[80%] h-[1px] bg-green-950 mt-10 mx-auto  "></div>
 
-        <Outlet/>
+      
+      <div className="w-[80%] h-[1px] bg-gray-400 my-6 mx-auto" />
+
+      
+      <Outlet />
     </div>
   );
 };
 
 export default ProfilePage;
-
-
