@@ -25,7 +25,8 @@ const CardHeroSection = () => {
               <p className="text-lg font-medium">name hai </p>
             </div>
 
-            <button className="text-sm font-medium bg-blue-300 px-3 py-2 rounded">Follow</button>
+            {/* <button className="text-sm font-medium bg-blue-300 px-3 py-2 rounded">Follow</button> */}
+            <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button>
           </div>
         </div>
   )
