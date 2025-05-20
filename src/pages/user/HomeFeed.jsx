@@ -9,8 +9,8 @@ const HomeFeed = () => {
         <Navigation />
       </div>
       <div className="h-full w-[80%] ">
-        <HeroSection />
-        {/* <Blogs/> */}
+        {/* <HeroSection /> */}
+        <Blogs/>
       </div>
     </div>
   );
