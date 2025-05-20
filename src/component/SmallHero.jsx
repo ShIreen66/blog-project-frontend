@@ -1,4 +1,3 @@
-import React from "react";
 
 const SmallHero = (props) => {
   const { hight, category, heading, img } = props;
@@ -6,7 +5,7 @@ const SmallHero = (props) => {
 
   return (
     <div
-      className={` w-full ${hight}  bg-[url(${img})] bg-cover  relative`}
+      className={` w-full ${hight}  bg-[url(https://images.pexels.com/photos/1263426/pexels-photo-1263426.jpeg?auto=compress&cs=tinysrgb&w=600)] bg-cover  relative`}
     >
       <div className="w-full h-full bg-[#00000084] relative">
         <div

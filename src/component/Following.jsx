@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 
 const Following = () => {
@@ -29,8 +28,6 @@ const Following = () => {
         <Card />
         
         </div>
-
-
       
     </div>
   );

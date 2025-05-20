@@ -8,6 +8,9 @@ import Follower from '../component/Follower'
 import Following from '../component/Following'
 import Post from '../component/Post'
 
+import CreatePost from '../component/CreatePost'
+import EditPost from '../component/EditPost'
+
 
 const MainRoute = () => {
   return (
@@ -22,9 +25,10 @@ const MainRoute = () => {
           <Route path='/dashboard/profile/post' element={<Post/>}/>
           <Route path='/dashboard/profile/following' element={<Following/>} /> 
     </Route>    
-
     </Route>
-    
+  
+     <Route path="/create/post" element={<CreatePost/>} />
+     <Route path="/edit/post" element={<EditPost/>} />
 
   </Routes>
   )
