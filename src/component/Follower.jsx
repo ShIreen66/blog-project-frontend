@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Follower = () => {
   return (
-    <div className="w-full h-screen bg-gray-100 px-6 py-6 ">
+    <div className="w-full h-screen bg-white px-6 py-6 ">
       <div className="w-full flex items-center justify-between mb-6">
         <div className="left flex items-center text-2xl font-semibold text-gray-800">
           Followers

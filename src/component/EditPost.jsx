@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditPost = () => {
   return (
-     <div className="w-full min-h-screen bg-gray-100 flex items-center justify-center p-4">
+     <div className="w-full min-h-screen bg-violet-100 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl bg-white rounded-lg shadow-md p-6 space-y-4 border border-gray-200">
 
         
@@ -62,7 +62,7 @@ const EditPost = () => {
           {/* Buttons */}
           <div className="space-x-2">
             <button className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-900">Cancel</button>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            <button className="bg-violet-600 text-white px-4 py-2 rounded hover:bg-violet-800 transition">
               Publish
             </button>
           </div>

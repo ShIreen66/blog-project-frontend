@@ -4,14 +4,14 @@ import SmallHero from "./SmallHero";
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-full  border   overflow-x-hidden">
+    <div className="w-full h-full  border  bg-violet-50 overflow-x-hidden">
       <h1 className="text-center text-3xl font-medium">Our Blogs</h1>
       <p className="text-center my-4">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed?
       </p>
-      <div className="mx-auto my-2 w-[50%] bg-gray-200 h-13 rounded flex items-center overflow-hidden">
+      <div className="mx-auto my-2 w-[50%] bg-violet-200 h-13 rounded flex items-center overflow-hidden">
         {" "}
-        <i class="ri-search-line h-full aspect-square bg-gray-400 text-3xl text-white p-2"></i>{" "}
+        <i class="ri-search-line h-full aspect-square bg-violet-400 text-3xl text-white p-2"></i>{" "}
         <input
           type="text"
           className="outline-hidden w-full h-full text-xl px-5"

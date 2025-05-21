@@ -7,15 +7,16 @@ import ProfilePage from '../component/ProfilePage'
 import Follower from '../component/Follower'
 import Following from '../component/Following'
 import Post from '../component/Post'
-
 import CreatePost from '../component/CreatePost'
 import EditPost from '../component/EditPost'
+import About from '../pages/user/About'
 
 
 const MainRoute = () => {
   return (
   <Routes>
     <Route path="/" element={<HomeFeed />} />
+    <Route path="/about" element={<About />} />
     <Route path="/signup" element={<Register />} />
     <Route path="/signin" element={<Login/>} />
     <Route path="/dashboard" element={<UserDashboard/>} >

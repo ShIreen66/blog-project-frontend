@@ -19,13 +19,13 @@ const ProfilePage = () => {
           
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
             <h3 className="text-2xl font-semibold">John Doe</h3>
-            <button className="border rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
+            <button className="border-2 rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
               Edit Profile
             </button>
-            <button className="border rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
+            <button className="border-2 rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-100">
               View Archive
             </button>
-            <button className="w-10 h-10 border rounded-full flex items-center justify-center hover:bg-gray-100">
+            <button className="w-10 h-10 border-2 rounded-full flex items-center justify-center hover:bg-gray-100">
               <i className="ri-user-settings-line text-xl"></i>
             </button>
           </div>
