@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const Blogs = () => {
   return (
-    <div className="w-full h-screen overflow-y-auto px-5">
+    <div className="w-full h-screen overflow-y-auto ">
       <h1 className="text-center pt-6 font-extrabold text-5xl">Blogs</h1>
       <p className="text-center my-5 font-medium text-lg">
         Bringing you thoughtful stories, one post at a time, to spark ideas and
@@ -50,9 +50,9 @@ const Blogs = () => {
           </select>
         </div>
       </div>
-      <div className="w-full  flex gap-6  flex-wrap">
+      <div className="w-full  flex gap-6  flex-wrap px-5">
         <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3">
+          <div className="w-full h-[15%] bg-violet-100  flex   gap-2 items-center justify-between px-3">
             <div className="h-full flex  gap-2 items-center px-3">
               <img
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
@@ -62,7 +62,7 @@ const Blogs = () => {
               <p className="text-lg font-medium">name hai </p>
             </div>
 
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
+            <button className="cursor-pointer text-sm font-medium  bg-violet-400 px-3 py-2 rounded text-white">
               Follow
             </button>
             {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
@@ -83,7 +83,7 @@ const Blogs = () => {
             eos!Lorem Lorem ipsum dolor ...
           </p>
 
-          <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
+          <div className=" w-full h-[10%] bg-violet-100 flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
               <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
@@ -102,7 +102,7 @@ const Blogs = () => {
               <p className="text-lg font-medium">name hai </p>
             </div>
 
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
+            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded ">
               Follow
             </button>
             {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
