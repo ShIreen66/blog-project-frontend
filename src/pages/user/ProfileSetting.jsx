@@ -1,13 +1,13 @@
 const ProfileSetting = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <div className="h-screen bg-gray-100 p-2 overflow-x-hidden">
+      <div className="w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-semibold mb-6 text-center">
           Profile Setting
         </h1>
 
         {/* Profile Section */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-2 mb-6">
           <img
             src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Profile"
@@ -51,9 +51,9 @@ const ProfileSetting = () => {
             Gender
           </label>
           <select className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:border-violet-700">
-            <option value="">Male</option>
-            <option value="">Female</option>
-            <option value="">Custom</option>
+            <option value="Male" className="hover:bg-violet-300">Male</option>
+            <option value="Female">Female</option>
+            <option value="Custom">Custom</option>
           </select>
         </div>
 

@@ -3,7 +3,7 @@ import ProfileSetting from "./ProfileSetting";
 
 const UserSetting = () => {
   return (
-    <div className="h-screen w-screen  flex">
+    <div className="h-screen w-screen flex">
       <div className="h-full w-[20%] ">
         <Navigation />
       </div>
