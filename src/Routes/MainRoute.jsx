@@ -10,6 +10,9 @@ import Post from '../component/Post'
 import CreatePost from '../component/CreatePost'
 import EditPost from '../component/EditPost'
 import About from '../pages/user/About'
+import AdminDashboard from '../pages/Admin/AdminDashboard'
+import ProfileSetting from '../pages/user/ProfileSetting'
+
 
 
 const MainRoute = () => {
@@ -19,6 +22,9 @@ const MainRoute = () => {
     <Route path="/about" element={<About />} />
     <Route path="/signup" element={<Register />} />
     <Route path="/signin" element={<Login/>} />
+    <Route path="/create/post" element={<CreatePost/>} />
+    <Route path="/edit/post" element={<EditPost/>} />
+    <Route path="/admin" element={<AdminDashboard/>} />
     <Route path="/dashboard" element={<UserDashboard/>} >
     <Route path='/dashboard/profile' element={<ProfilePage/>}>
           <Route path='/dashboard/profile/follower' element={<Follower/>}/>
@@ -27,9 +33,9 @@ const MainRoute = () => {
           <Route path='/dashboard/profile/following' element={<Following/>} /> 
     </Route>    
     </Route>
-  
-     <Route path="/create/post" element={<CreatePost/>} />
-     <Route path="/edit/post" element={<EditPost/>} />
+    
+    <Route path='/profile/setting' element={<ProfileSetting/>}></Route>
+
 
   </Routes>
   )

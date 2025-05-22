@@ -59,12 +59,12 @@ const Login = () => {
               placeholder="Enter Password"
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
             />
-            <button className="bg-[#101828] text-white py-3 rounded-lg font-semibold hover:bg-[#101828a1] transition duration-300 font-[SUSE] cursor-pointer">
+            <button className="bg-[#101828] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 font-[SUSE] cursor-pointer">
               Login →
             </button>
             <p className="text-center font-medium text-lg ">OR</p>
             <button className="p-1 rounded-lg border   cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2">
-              <img className="h-12 rounded-full" src="/google_icon.png" alt="" /><p>continue with Google</p>
+              <img className="h-12 rounded-full" src="/google_icon.png" alt="" /><p>Continue with Google</p>
             </button>
           </form>
         </div>

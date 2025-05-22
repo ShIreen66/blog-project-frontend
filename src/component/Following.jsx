@@ -6,7 +6,7 @@ const Following = () => {
       <div className="w-full flex items-center justify-between mb-6">
         <div className="left flex items-center text-2xl font-semibold text-gray-800">
           Followings
-          <span className="text-base bg-gray-600 text-white text-center rounded-full cursor-pointer mx-3 px-3 py-1">
+          <span className="text-base bg-gray-800 text-white text-center rounded-full cursor-pointer mx-3 px-3 py-1 hover:bg-violet-900 hover:scale-110" >
             0
           </span>
         </div>
