@@ -1,6 +1,7 @@
 import Blogs from "../../component/Blogs";
 import HeroSection from "../../component/HeroSection";
 import Navigation from "../../component/Navigation";
+import SingleBlog from "../../component/SingleBlog";
 
 const HomeFeed = () => {
   return (
@@ -10,7 +11,8 @@ const HomeFeed = () => {
       </div>
       <div className="h-full w-[80%] ">
         {/* <HeroSection /> */}
-        <Blogs/>
+<SingleBlog/>
+        {/* <Blogs/> */}
       </div>
     </div>
   );

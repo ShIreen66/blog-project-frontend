@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const Blogs = () => {
   return (
-    <div className="w-full h-screen overflow-y-auto px-5">
+    <div className="w-full h-screen overflow-y-auto ">
       <h1 className="text-center pt-6 font-extrabold text-5xl">Blogs</h1>
       <p className="text-center my-5 font-medium text-lg">
         Bringing you thoughtful stories, one post at a time, to spark ideas and
@@ -102,7 +102,7 @@ const Blogs = () => {
               <p className="text-lg font-medium">name hai </p>
             </div>
 
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
+            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded ">
               Follow
             </button>
             {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
