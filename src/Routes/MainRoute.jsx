@@ -12,6 +12,15 @@ import EditPost from "../component/EditPost";
 import About from "../pages/user/About";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
 import UserSetting from "../pages/user/UserSetting";
+import AdminPosts from "../pages/Admin/AdminPosts";
+import AdminHero from "../pages/Admin/AdminHero";
+import AdminCategories from "../pages/Admin/AdminCategories";
+import AdminComments from "../pages/Admin/AdminComments";
+import AdminUsers from "../pages/Admin/AdminUsers";
+import AdminAnalytics from "../pages/Admin/AdminAnalytics";
+import AdminSettings from "../pages/Admin/AdminSettings";
+import AdminLogout from "../pages/Admin/AdminLogout";
+// import AdminHero from "../component/AdminHero";
 
 const MainRoute = () => {
   return (
@@ -31,7 +40,17 @@ const MainRoute = () => {
         </Route>
       </Route>
       <Route path="/profile/setting" element={<UserSetting />}></Route>
-      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin" element={<AdminDashboard />}>
+        <Route path="/admin/dashboard" element={<AdminHero />} />
+        <Route path="/admin/posts" element={<AdminPosts />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/comments" element={<AdminComments />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
+        <Route path="/admin/analytics" element={<AdminAnalytics />} />
+        <Route path="/admin/Settings" element={<AdminSettings />} />
+        <Route path="/admin/logout" element={<AdminLogout />} />
+      </Route>
     </Routes>
   );
 };
