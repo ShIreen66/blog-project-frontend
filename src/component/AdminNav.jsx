@@ -1,5 +1,5 @@
 import React from "react";
-import { BiCategory, BiComment,ImUsers } from "react-icons/bi";
+import { BiCategory, BiComment } from "react-icons/bi";
 
 const AdminNav = () => {
   return (
