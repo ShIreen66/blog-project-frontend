@@ -8,12 +8,12 @@ import {
   FaCog,
   FaSignOutAlt,
   FaBell,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const NavItem = ({ icon, text, active }) => (
   <div
     className={`flex items-center space-x-3 px-3 py-2 rounded ${
-      active ? 'bg-gray-800' : 'hover:bg-gray-800'
+      active ? "bg-gray-800" : "hover:bg-gray-800"
     } cursor-pointer`}
   >
     <span>{icon}</span>
@@ -41,7 +41,9 @@ const DashboardCard = ({ title, count }) => (
   <div className="bg-white rounded shadow p-4 flex-1 text-center">
     <p className="text-sm text-gray-500">{title}</p>
     <h3 className="text-xl font-bold my-2">{count}</h3>
-    <button className="text-blue-600 text-sm hover:underline">View Details</button>
+    <button className="text-blue-600 text-sm hover:underline">
+      View Details
+    </button>
   </div>
 );
 
@@ -74,10 +76,30 @@ const Dashboard = () => (
           <h2 className="font-semibold mb-2">Recent Posts</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              ['Introduction to Blogging', 'John Doe', 'Apr 21, 2024', 'Published'],
-              ['Tips for Writing Engaging Content', 'John Doe', 'Apr 19, 2024', 'Draft'],
-              ['How to Optimize Your Blog for SEO', 'John Doe', 'Apr 17, 2024', 'Published'],
-              ['The Importance of Social Media Sharing', 'hh Doe', 'Apr 16, 2024', 'Published'],
+              [
+                "Introduction to Blogging",
+                "John Doe",
+                "Apr 21, 2024",
+                "Published",
+              ],
+              [
+                "Tips for Writing Engaging Content",
+                "John Doe",
+                "Apr 19, 2024",
+                "Draft",
+              ],
+              [
+                "How to Optimize Your Blog for SEO",
+                "John Doe",
+                "Apr 17, 2024",
+                "Published",
+              ],
+              [
+                "The Importance of Social Media Sharing",
+                "hh Doe",
+                "Apr 16, 2024",
+                "Published",
+              ],
             ].map(([title, author, date, status], i) => (
               <div
                 key={i}
@@ -88,9 +110,9 @@ const Dashboard = () => (
                 <p className="text-sm text-gray-600">📅 {date}</p>
                 <span
                   className={`inline-block mt-2 px-2 py-1 rounded-full text-xs font-medium ${
-                    status === 'Published'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-yellow-100 text-yellow-700'
+                    status === "Published"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
                   }`}
                 >
                   {status}
@@ -98,11 +120,13 @@ const Dashboard = () => (
               </div>
             ))}
 
-            <button className='bg-green-600 w-20 p-1 text-center mx-[88%] border-none'>More <i class="ri-arrow-right-line"></i> </button>
+            <button className="bg-green-600 w-20 p-1 text-center mx-[88%] border-none">
+              More <i class="ri-arrow-right-line"></i>{" "}
+            </button>
           </div>
         </div>
 
-        {/* ✅ Categories table remains unchanged */}
+        
         <div>
           <h2 className="font-semibold mb-2">Categories</h2>
           <table className="min-w-full bg-white rounded shadow">
@@ -114,10 +138,10 @@ const Dashboard = () => (
             </thead>
             <tbody>
               {[
-                ['Technology', 34],
-                ['Lifestyle', 18],
-                ['Travel', 12],
-                ['Food', 10],
+                ["Technology", 34],
+                ["Lifestyle", 18],
+                ["Travel", 12],
+                ["Food", 10],
               ].map(([name, count], i) => (
                 <tr key={i} className="border-t">
                   <td className="p-2">{name}</td>
@@ -143,9 +167,24 @@ const Dashboard = () => (
           </thead>
           <tbody>
             {[
-              ['Tips for Writing Engaging Content', 'This is very informative and helpful!', 'Jane Smith', 'Apr 20, 2024'],
-              ['Tips for Writing Engaging Content', 'Great Introduction to the topic.', 'Alico Johnson', 'Apr 20, 2024'],
-              ['Creating a Content Calendar', 'Thank you for sharing this.', 'Michael Brown', 'Apr 18, 2024'],
+              [
+                "Tips for Writing Engaging Content",
+                "This is very informative and helpful!",
+                "Jane Smith",
+                "Apr 20, 2024",
+              ],
+              [
+                "Tips for Writing Engaging Content",
+                "Great Introduction to the topic.",
+                "Alico Johnson",
+                "Apr 20, 2024",
+              ],
+              [
+                "Creating a Content Calendar",
+                "Thank you for sharing this.",
+                "Michael Brown",
+                "Apr 18, 2024",
+              ],
             ].map(([title, excerpt, author, date], i) => (
               <tr key={i} className="border-t">
                 <td className="p-2">{title}</td>
@@ -153,7 +192,9 @@ const Dashboard = () => (
                 <td className="p-2">{author}</td>
                 <td className="p-2">{date}</td>
                 <td className="p-2 space-x-2">
-                  <button className="text-gray-600 hover:underline">Delete</button>
+                  <button className="text-gray-600 hover:underline">
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
