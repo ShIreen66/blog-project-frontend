@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import AdminNav from "../../component/AdminNav";
+import AdminHero from "../../component/AdminHero";
 
 const AdminDashboard = () => {
   return (
-    <div>AdminDashboard</div>
-  )
-}
+    <div className="w-screen h-screen bg-red-300 flex">
+      <AdminNav />
+      <AdminHero />
+    </div>
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;
