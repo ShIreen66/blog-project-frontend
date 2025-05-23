@@ -30,8 +30,8 @@ const MainRoute = () => {
           <Route path="/dashboard/profile/following" element={<Following />} />
         </Route>
       </Route>
-
       <Route path="/profile/setting" element={<UserSetting />}></Route>
+      <Route path="/admin" element={<AdminDashboard />} />
     </Routes>
   );
 };
