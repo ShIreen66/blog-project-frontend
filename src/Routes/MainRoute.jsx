@@ -11,7 +11,6 @@ import CreatePost from "../component/CreatePost";
 import EditPost from "../component/EditPost";
 import About from "../pages/user/About";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
-// import ProfileSetting from "../pages/user/ProfileSetting";
 import UserSetting from "../pages/user/UserSetting";
 
 const MainRoute = () => {
@@ -27,7 +26,6 @@ const MainRoute = () => {
       <Route path="/dashboard" element={<UserDashboard />}>
         <Route path="/dashboard/profile" element={<ProfilePage />}>
           <Route path="/dashboard/profile/follower" element={<Follower />} />
-          {/* <Route path="/dashboard/profile/post" element={<Post />} /> */}
           <Route path="/dashboard/profile/post" element={<Post />} />
           <Route path="/dashboard/profile/following" element={<Following />} />
         </Route>
