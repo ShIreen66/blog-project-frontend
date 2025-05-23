@@ -11,7 +11,7 @@ const HeroSection = () => {
       </p>
       <div className="mx-auto my-2 w-[50%] bg-violet-200 h-13 rounded flex items-center overflow-hidden">
         {" "}
-        <i class="ri-search-line h-full aspect-square bg-violet-400 text-3xl text-white p-2"></i>{" "}
+        <i className="ri-search-line h-full aspect-square bg-violet-400 text-3xl text-white p-2"></i>{" "}
         <input
           type="text"
           className="outline-hidden w-full h-full text-xl px-5"

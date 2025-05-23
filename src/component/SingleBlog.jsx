@@ -24,7 +24,7 @@ const SingleBlog = () => {
           <img
             src="content.avif"
             alt=""
-            className="w-full  h-full object-cover  mx-auto rounded-4xl hover:scale-y-110 "
+            className="w-full  h-full object-cover  mx-auto rounded-4xl hover:scale-y-110 transition "
           />
         </div>
         <p className="m-10 text-justify text-lg">
@@ -54,10 +54,10 @@ const SingleBlog = () => {
 
         <div className=" w-full h-[5%]   flex items-center px-10 mt-5 gap-3 ">
           <p className="flex items-center text-xl font-medium gap-1">
-            <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+            <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
           </p>
-          <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-          <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+          <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+          <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
         </div>
         <div className="flex mx-10 mb-3  gap-5">
           <img
