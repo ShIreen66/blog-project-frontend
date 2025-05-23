@@ -85,10 +85,10 @@ const Blogs = () => {
 
           <div className=" w-full h-[10%] bg-violet-100  flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
-              <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
-            <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
           </div>
         </div>
         <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
@@ -125,10 +125,10 @@ const Blogs = () => {
 
           <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
-              <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
-            <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
           </div>
         </div>
         <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
@@ -165,10 +165,10 @@ const Blogs = () => {
 
           <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
-              <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
-            <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
           </div>
         </div>
           <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
@@ -205,10 +205,10 @@ const Blogs = () => {
 
           <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
-              <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
-            <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
           </div>
         </div>
           <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
@@ -245,10 +245,10 @@ const Blogs = () => {
 
           <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
             <p className="flex items-center text-xl font-medium gap-1">
-              <i class="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
+              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
             </p>
-            <i class="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i class="ri-share-forward-line text-2xl cursor-pointer"></i>
+            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
+            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
           </div>
         </div>
         

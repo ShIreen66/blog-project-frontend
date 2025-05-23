@@ -1,5 +1,6 @@
 import React from "react";
-import { BiCategory, BiComment,ImUsers } from "react-icons/bi";
+import { BiCategory, BiComment, BiUser } from "react-icons/bi";
+import { TbBrandGoogleAnalytics } from "react-icons/tb";
 
 const AdminNav = () => {
   return (
@@ -7,11 +8,11 @@ const AdminNav = () => {
       <h2>Logo</h2>
       <h3>Admin Dashboard</h3>
       <p className="flex">
-        <i class="ri-add-box-line"></i>
+        <i className="ri-add-box-line"></i>
         <p>Dashboard</p>
       </p>
       <p className="flex">
-        <i class="ri-news-line"></i>
+        <i className="ri-news-line"></i>
         <p>Posts</p>
       </p>
       <p className="flex">
@@ -24,11 +25,11 @@ const AdminNav = () => {
         <p>Comments</p>
       </p>
       <p className="flex">
-        <ImUsers/>
+        <BiUser/>
         <p>Users</p>
       </p>
       <p className="flex">
-        <TbDeviceAnalytics />
+      <TbBrandGoogleAnalytics />
         <p>Analytics</p>
       </p>
     </div>
