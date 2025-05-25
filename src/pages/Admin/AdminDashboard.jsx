@@ -59,7 +59,7 @@ const Dashboard = () => (
         />
         <div className="flex items-center space-x-4">
           <FaBell className="text-gray-600" />
-          <img src="" alt="Profile" className="w-10 h-10 rounded-full" />
+          <img src="https://images.unsplash.com/photo-1563694983011-6f4d90358083?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile" className="w-10 h-10 rounded-full" />
         </div>
       </header>
 
@@ -96,14 +96,14 @@ const Dashboard = () => (
               ],
               [
                 "The Importance of Social Media Sharing",
-                "hh Doe",
+                "John Doe",
                 "Apr 16, 2024",
                 "Published",
               ],
             ].map(([title, author, date, status], i) => (
               <div
                 key={i}
-                className="bg-white p-4 rounded shadow hover:shadow-md transition"
+                className="bg-white p-4 rounded shadow hover:shadow-md transition hover:scale-105"
               >
                 <h3 className="text-md font-semibold text-gray-800">{title}</h3>
                 <p className="text-sm text-gray-600 mt-1">👤 {author}</p>
@@ -120,7 +120,7 @@ const Dashboard = () => (
               </div>
             ))}
 
-            <button className="bg-green-600 w-20 p-1 text-center mx-[88%] border-none">
+            <button className="bg-green-600 w-20 p-1 text-center mx-[88%] border-none hover:bg-green-700">
               More <i class="ri-arrow-right-line"></i>{" "}
             </button>
           </div>
