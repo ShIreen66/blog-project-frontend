@@ -8,47 +8,51 @@ import {
   FaCog,
   FaSignOutAlt,
   FaBell,
-} from "react-icons/fa";
-
-const NavItem = ({ icon, text, active }) => (
-  <div
-    className={`flex items-center space-x-3 px-3 py-2 rounded ${
-      active ? "bg-gray-800" : "hover:bg-gray-800"
-    } cursor-pointer`}
-  >
-    <span>{icon}</span>
-    <span>{text}</span>
-  </div>
-);
+} from 'react-icons/fa';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Sidebar = () => (
-  <div className="bg-gray-900 text-white w-64 min-h-screen p-4">
+  <div className="bg-gray-900 text-white w-64 min-h-screen p-4 overflow-y-hidden">
     <h1 className="text-xl font-bold mb-6">Admin dashboard</h1>
     <nav className="space-y-3">
-      <NavItem icon={<FaTachometerAlt />} text="Dashboard" active />
-      <NavItem icon={<FaClipboardList />} text="Posts" />
-      <NavItem icon={<FaFolder />} text="Categories" />
-      <NavItem icon={<FaComments />} text="Comments" />
-      <NavItem icon={<FaUsers />} text="Users" />
-      <NavItem icon={<FaChartLine />} text="Analytics" />
-      <NavItem icon={<FaCog />} text="Settings" />
-      <NavItem icon={<FaSignOutAlt />} text="Logout" />
+      <NavLink to="/admin/dashboard" end className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaTachometerAlt />
+        <span>Dashboard</span>
+      </NavLink>
+      <NavLink to="/admin/posts" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaClipboardList />
+        <span>Posts</span>
+      </NavLink>
+      <NavLink to="/admin/categories" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaFolder />
+        <span>Categories</span>
+      </NavLink>
+      <NavLink to="/admin/comments" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaComments />
+        <span>Comments</span>
+      </NavLink>
+      <NavLink to="/admin/users" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaUsers />
+        <span>Users</span>
+      </NavLink>
+      <NavLink to="/admin/analytics" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaChartLine />
+        <span>Analytics</span>
+      </NavLink>
+      <NavLink to="/admin/settings" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaCog />
+        <span>Settings</span>
+      </NavLink>
+      <NavLink to="/admin/logout" className={({ isActive }) => `flex items-center space-x-3 px-3 py-2 rounded ${isActive ? 'bg-gray-800 text-red-500' : 'hover:bg-gray-800'} cursor-pointer`}>
+        <FaSignOutAlt />
+        <span>Logout</span>
+      </NavLink>
     </nav>
   </div>
 );
 
-const DashboardCard = ({ title, count }) => (
-  <div className="bg-white rounded shadow p-4 flex-1 text-center">
-    <p className="text-sm text-gray-500">{title}</p>
-    <h3 className="text-xl font-bold my-2">{count}</h3>
-    <button className="text-blue-600 text-sm hover:underline">
-      View Details
-    </button>
-  </div>
-);
-
 const Dashboard = () => (
-  <div className="flex">
+  <div className="flex h-screen overflow-hidden">
     <Sidebar />
     <main className="flex-1 bg-gray-100 p-6">
       <header className="flex justify-between items-center mb-6">
@@ -59,7 +63,7 @@ const Dashboard = () => (
         />
         <div className="flex items-center space-x-4">
           <FaBell className="text-gray-600" />
-          <img src="https://images.unsplash.com/photo-1563694983011-6f4d90358083?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile" className="w-10 h-10 rounded-full" />
+          <img src="" alt="Profile" className="w-10 h-10 rounded-full" />
         </div>
       </header>
 
@@ -96,14 +100,14 @@ const Dashboard = () => (
               ],
               [
                 "The Importance of Social Media Sharing",
-                "John Doe",
+                "hh Doe",
                 "Apr 16, 2024",
                 "Published",
               ],
             ].map(([title, author, date, status], i) => (
               <div
                 key={i}
-                className="bg-white p-4 rounded shadow hover:shadow-md transition hover:scale-105"
+                className="bg-white p-4 rounded shadow hover:shadow-md transition"
               >
                 <h3 className="text-md font-semibold text-gray-800">{title}</h3>
                 <p className="text-sm text-gray-600 mt-1">👤 {author}</p>
@@ -120,7 +124,7 @@ const Dashboard = () => (
               </div>
             ))}
 
-            <button className="bg-green-600 w-20 p-1 text-center mx-[88%] border-none hover:bg-green-700">
+            <button className="bg-green-600 w-20 p-1 text-center mx-[88%] border-none">
               More <i class="ri-arrow-right-line"></i>{" "}
             </button>
           </div>
