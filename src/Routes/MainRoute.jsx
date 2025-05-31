@@ -10,7 +10,6 @@ import Post from "../component/Post";
 import CreatePost from "../component/CreatePost";
 import EditPost from "../component/EditPost";
 import About from "../pages/user/About";
-import AdminDashboard from "../pages/Admin/AdminDashboard";
 import UserSetting from "../pages/user/UserSetting";
 import AdminPosts from "../pages/Admin/AdminPosts";
 import AdminHero from "../pages/Admin/AdminHero";
@@ -20,13 +19,15 @@ import AdminUsers from "../pages/Admin/AdminUsers";
 import AdminAnalytics from "../pages/Admin/AdminAnalytics";
 import AdminSettings from "../pages/Admin/AdminSettings";
 import AdminLogout from "../pages/Admin/AdminLogout";
+import AdminDashboard from "../pages/Admin/AdminDashboard";
+import UserAbout from "../pages/user/UserAbout";
 // import AdminHero from "../component/AdminHero";
 
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<HomeFeed />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/about" element={<UserAbout />} />
       <Route path="/signup" element={<Register />} />
       <Route path="/signin" element={<Login />} />
       <Route path="/create/post" element={<CreatePost />} />
@@ -52,6 +53,8 @@ const MainRoute = () => {
         <Route path="/admin/logout" element={<AdminLogout />} />
       </Route>
     </Routes>
+
+    
   );
 };
 

@@ -39,6 +39,15 @@ const CreatePost = () => {
           type="text"
           value={heading}
           onChange={(e) => setHeading(e.target.value)}
+          placeholder="Category"
+          className="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-violet-400"
+        />
+
+        
+        <input
+          type="text"
+          value={heading}
+          onChange={(e) => setHeading(e.target.value)}
           placeholder="Heading"
           className="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-violet-400"
         />
@@ -46,7 +55,7 @@ const CreatePost = () => {
           rows={9}
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="Write here..."
+          placeholder="Description..."
           className="w-full p-3 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-violet-400"
         />
 
