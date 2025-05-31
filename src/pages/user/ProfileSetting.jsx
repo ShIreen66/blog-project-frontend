@@ -55,7 +55,7 @@ const ProfileSetting = () => {
   };
 
   return (
-    <div className="h-screen bg-gray-100 p-2 overflow-x-hidden">
+    <div className="h-screen bg-gray-100 p-2 overflow-x-hidden ">
       <form
         className="w-2xl mx-auto bg-white shadow-md rounded-lg p-6"
         onSubmit={handleSubmit}

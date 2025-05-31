@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 const ProfilePage = () => {
   return (
@@ -25,21 +25,28 @@ const ProfilePage = () => {
             <button className="border-2 rounded-md px-4 py-1 text-sm font-medium cursor-pointer hover:bg-violet-300 hover:scale-110">
               View Archive
             </button>
-            <button className="w-10 h-10 border-2 rounded-full flex items-center justify-center cursor-pointer hover:bg-violet-300 hover:scale-110">
+            <Link to="/profile/setting" className="w-10 h-10 border-2 rounded-full flex items-center justify-center cursor-pointer hover:bg-violet-300 hover:scale-110">
               <i className="ri-user-settings-line text-xl"></i>
-            </button>
+            </Link>
           </div>
 
           
           <div className="flex gap-6 ml-18 mt-5 ">
-            {["posts", "followers", "followings"].map((label, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <span className="bg-gray-800 text-white text-sm px-3 py-1 rounded-full hover:scale-125 cursor-pointer">
-                  0
-                </span>
-                <span className="text-sm">{label}</span>
-              </div>
-            ))}
+            { [
+                { label: "posts", path: "/dashboard/profile/post" },
+                { label: "followers", path: "/dashboard/profile/follower" },
+                { label: "followings", path: "/dashboard/profile/following" },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <Link
+                    to={item.path}
+                    className="bg-gray-800 text-white text-sm px-3 py-1 rounded-full hover:scale-125 cursor-pointer transition"
+                  >
+                    0
+                  </Link>
+                  <span className="text-sm">{item.label}</span>
+                </div>
+              )) }
           </div>
         </div>
       </div>

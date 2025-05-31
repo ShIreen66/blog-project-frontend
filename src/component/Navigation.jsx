@@ -9,26 +9,34 @@ const Navigation = () => {
         <div>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2 ">
           <li className="flex gap-3 items-center">
-            <i className="ri-home-8-line text-2xl"></i>
-            <p className="font-medium">Home</p>
+            <Link to="/">
+              <i className="ri-home-8-line text-2xl"></i>
+              <span className="font-medium ml-2">Home</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-blogger-line text-2xl"></i>
-            <p className="font-medium">Blogs</p>
+            <Link to="/blogs">
+              <i className="ri-blogger-line text-2xl"></i>
+              <span className="font-medium ml-2">Blogs</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-information-fill text-2xl"></i>
-            <p className="font-medium">About Us</p>
+            <Link to="/about">
+              <i className="ri-information-fill text-2xl"></i>
+              <span className="font-medium ml-2">About Us</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-contacts-book-3-fill text-2xl"></i>
-            <p className="font-medium">Contact Us</p>
+            <Link to="/contact">
+              <i className="ri-contacts-book-3-fill text-2xl"></i>
+              <span className="font-medium ml-2">Contact Us</span>
+            </Link>
           </li>
         </ul>
         </div>
