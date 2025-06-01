@@ -42,7 +42,7 @@ const Navigation = () => {
         </div>
       
       <div className="w-full h-15 flex justify-center items-center  ">
-        <Link to={"/signup"} className="h-[80%] bg-violet-600 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto hover:scale-90 hover:bg-violet-900">
+        <Link to={"/signup"} className="h-[80%] bg-violet-600 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto hover:focus:scale-100 hover:bg-violet-900">
           Signup <i className="ri-arrow-right-line"></i>
         </Link>
         {/* <div className="w-full h-full flex  items-center justify-center gap-4">
