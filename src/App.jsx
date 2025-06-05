@@ -1,7 +1,7 @@
 import MainRoute from "./Routes/MainRoute";
 
 const App = () => {
-  return <MainRoute/>;
+  return <MainRoute />;
 };
 
 export default App;

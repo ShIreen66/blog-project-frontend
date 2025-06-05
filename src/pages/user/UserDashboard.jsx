@@ -1,6 +1,4 @@
-import React from 'react'
 import Navigation from '../../component/Navigation';
-import ProfilePage from '../../component/ProfilePage';
 import { Outlet } from 'react-router-dom';
 
 const UserDashboard = () => {

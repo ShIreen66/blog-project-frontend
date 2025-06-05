@@ -9,32 +9,40 @@ const Navigation = () => {
         <div>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2 ">
           <li className="flex gap-3 items-center">
-            <i className="ri-home-8-line text-2xl"></i>
-            <p className="font-medium">Home</p>
+            <Link to="/">
+              <i className="ri-home-8-line text-2xl"></i>
+              <span className="font-medium ml-2">Home</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-blogger-line text-2xl"></i>
-            <p className="font-medium">Blogs</p>
+            <Link to="/blogs">
+              <i className="ri-blogger-line text-2xl"></i>
+              <span className="font-medium ml-2">Blogs</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-information-fill text-2xl"></i>
-            <p className="font-medium">About Us</p>
+            <Link to="/about">
+              <i className="ri-information-fill text-2xl"></i>
+              <span className="font-medium ml-2">About Us</span>
+            </Link>
           </li>
         </ul>
         <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
           <li className="flex gap-4 items-center">
-            <i className="ri-contacts-book-3-fill text-2xl"></i>
-            <p className="font-medium">Contact Us</p>
+            <Link to="/contact">
+              <i className="ri-contacts-book-3-fill text-2xl"></i>
+              <span className="font-medium ml-2">Contact Us</span>
+            </Link>
           </li>
         </ul>
         </div>
       
       <div className="w-full h-15 flex justify-center items-center  ">
-        <Link to={"signup"} className="h-[80%] bg-violet-600 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto hover:scale-90 hover:bg-violet-900">
+        <Link to={"/signup"} className="h-[80%] bg-violet-600 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto hover:focus:scale-100 hover:bg-violet-900">
           Signup <i className="ri-arrow-right-line"></i>
         </Link>
         {/* <div className="w-full h-full flex  items-center justify-center gap-4">

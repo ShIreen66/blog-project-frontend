@@ -1,75 +1,61 @@
-
-
-// export default function AdminPosts() {
-
-  import React from 'react';
+const posts = [
+  {
+    title: "Introduction to Blogging",
+    author: "John Doe",
+    date: "Apr 21, 2024",
+    status: "Published",
+  },
+  {
+    title: "Tips for Writing Engaging Content",
+    author: "John Doe",
+    date: "Apr 19, 2024",
+    status: "Draft",
+  },
+  {
+    title: "How to Optimize Your Blog for SEO",
+    author: "John Doe",
+    date: "Apr 17, 2024",
+    status: "Published",
+  },
+  {
+    title: "The Importance of Social Media Sharing",
+    author: "John Doe",
+    date: "Apr 16, 2024",
+    status: "Published",
+  },
+];
 
 const AdminPosts = () => {
   return (
-    <div className="w-full h-screen p-6 bg-white overflow-auto">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Posts</h1>
-        <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-          + Add New
-        </button>
-      </div>
-
-      {/* Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <select className="p-2 border rounded w-full">
-          <option>All Categories</option>
-          <option>Lifestyle</option>
-          <option>Marketing</option>
-        </select>
-        <select className="p-2 border rounded w-full">
-          <option>All Authors</option>
-          <option>John Doe</option>
-        </select>
-        <select className="p-2 border rounded w-full">
-          <option>Published</option>
-          <option>Draft</option>
-        </select>
-        <input
-          type="text"
-          placeholder="Search posts"
-          className="p-2 border rounded w-full"
-        />
-      </div>
-
-      {/* Table */}
-      <div className="overflow-x-auto bg-gray-50 rounded-lg shadow">
-        <table className="w-full table-auto border-collapse">
-          <thead className="bg-gray-100 text-left text-sm font-semibold">
-            <tr>
-              <th className="p-3">Title</th>
-              <th className="p-3">Author</th>
-              <th className="p-3">Category</th>
-              <th className="p-3">Date</th>
-              <th className="p-3">Comments</th>
-              <th className="p-3">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="text-sm">
-            {posts.map((post, idx) => (
-              <tr key={idx} className="border-t hover:bg-gray-100">
-                <td className="p-3">
-                  <div className="font-medium">{post.title}</div>
-                  <div className="text-xs text-gray-500">{post.date}</div>
-                </td>
-                <td className="p-3">{post.author}</td>
-                <td className="p-3">{post.category}</td>
-                <td className="p-3">{post.date}</td>
-                <td className="p-3">{post.comments}</td>
-                <td className="p-3 space-x-2">
-                  <button className="text-blue-600 hover:underline">Edit</button>
-                  <button className="text-red-600 hover:underline">Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="p-6 bg-gray-100 w-full">
+      <h2 className="text-2xl font-semibold mb-4">Recent Posts</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {posts.map((post, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-xl shadow p-6 flex flex-col gap-2 hover:shadow-lg transition duration-200 border border-gray-100"
+          >
+            <h3 className="text-lg font-bold text-gray-800 mb-1 truncate">
+              {post.title}
+            </h3>
+            <div className="flex items-center text-sm text-gray-500 mb-1">
+              <span className="mr-2">👤 {post.author}</span>
+              <span className="ml-auto">📅 {post.date}</span>
+            </div>
+            <span
+              className={`self-start px-3 py-1 rounded-full text-xs font-medium mt-2 ${
+                post.status === "Published"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+            >
+              {post.status}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default AdminPosts;
