@@ -2,91 +2,96 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#1d2b34] text-white py-10 px-6 md:px-20">
-      <div className="blog top grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+    <footer className="relative w-full bg-[#0f172a] text-gray-300 pt-20 pb-10 px-6 md:px-20 overflow-hidden">
+      {/* Curved Top Wave */}
+      <div className="absolute -top-[1px] left-0 w-full overflow-hidden leading-[0] rotate-180">
+        <svg
+          className="relative block w-full h-12 text-[#0f172a]"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+        >
+          <path
+            d="M0,0V46.29c47.26,22.18,104.43,29,158,17.39,70-15.65,136-57.46,206-73.59C438.35-26.24,512.77-3.94,583,15.05c69.94,19.06,137.06,39.19,207,21.43,65.28-16.39,127.31-66.5,192-77.81,66.5-11.71,136,14.16,204,29.5V0Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+
+      {/* Top Section */}
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+        {/* Brand */}
         <div>
-          <h1 className="text-2xl font-bold mb-2">XYZ Blog</h1>
-          <p className="text-sm text-gray-400 mb-4">
+          <h1 className="text-2xl font-bold text-white mb-4">XYZ Blog</h1>
+          <p className="text-sm text-gray-400 mb-6 leading-relaxed">
             Simplifying tech, one post at a time.
           </p>
 
-          <div className="icons flex space-x-4 text-lg">
-            <a href="#" className="hover:text-violet-400" aria-label="Facebook">
-              <i className="ri-facebook-fill"></i>
-            </a>
-            <a href="#" className="hover:text-violet-400" aria-label="Twitter">
-              <i className="ri-twitter-fill"></i>
-            </a>
-            <a
-              href="#"
-              className="hover:text-violet-400"
-              aria-label="Instagram"
-            >
-              <i className="ri-instagram-line"></i>
-            </a>
-            <a href="#" className="hover:text-violet-400" aria-label="GitHub">
-              <i className="ri-github-fill"></i>
-            </a>
+          {/* Social Icons */}
+          <div className="flex space-x-4 text-xl">
+            {["facebook-fill", "twitter-fill", "instagram-line", "github-fill"].map((icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="hover:text-violet-400 transition transform hover:scale-110"
+              >
+                <i className={`ri-${icon}`}></i>
+              </a>
+            ))}
           </div>
         </div>
 
-        <ul className="help">
-          <li className="text-xl font-medium mb-2">Help</li>
-          <li className="text-sm font-medium">Help Center</li>
-          <li>Help Forum</li>
-          <li>Video Tutorials</li>
-        </ul>
+        {/* Links */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-4">Links</h2>
+          <ul className="space-y-2 text-sm">
+            {["Home", "About", "Blog", "Contact"].map((item, i) => (
+              <li key={i} className="relative group cursor-pointer w-fit">
+                {item}
+                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <ul className="community">
-          <li className="text-xl font-medium mb-2">Community</li>
-          <li>Blogger Buzz</li>
-        </ul>
+        {/* Resources */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-4">Resources</h2>
+          <ul className="space-y-2 text-sm">
+            {["Help Center", "Community", "Privacy Policy", "Terms"].map((item, i) => (
+              <li key={i} className="relative group cursor-pointer w-fit">
+                {item}
+                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <ul className="developers">
-          <li className="text-xl font-medium mb-2">Developers</li>
-          <li>Blogger API</li>
-          <li>Developer Forum</li>
-        </ul>
-      </div>
-
-      <div className="links grid grid-cols-1 md:grid-cols-2 gap-10 items-start border-t border-white/20 pt-8">
-        <div className="newsletter">
-          <p className="font-medium mb-2">Subscribe to our Newsletter</p>
+        {/* Newsletter */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-4">Newsletter</h2>
+          <p className="text-sm text-gray-400 mb-3">
+            Subscribe to get the latest articles.
+          </p>
           <form className="flex flex-col sm:flex-row">
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 text-white bg-black rounded-md sm:rounded-r-none sm:rounded-l-md mb-2 sm:mb-0 sm:mr-2 w-full sm:w-auto hover:scale-105"
+              className="p-3 text-gray-200 bg-[#1e293b] rounded-md sm:rounded-r-none sm:rounded-l-md mb-2 sm:mb-0 sm:mr-2 w-full focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
             <button
               type="submit"
-              className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md hover:scale-105"
+              className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-md sm:rounded-l-none sm:rounded-r-md transition-transform hover:scale-105"
             >
               Subscribe
             </button>
           </form>
         </div>
-
-        <ul className="quick links">
-          <li className="text-xl font-medium mb-2">Quick Links</li>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-        </ul>
       </div>
 
-      <div className="copyright mt-10 text-center text-sm text-gray-400">
-        <p>
-          <i className="ri-copyright-line"></i> Copyright XYZ.com All Rights
-          reserved. 2025
-        </p>
-        <a
-          href="#"
-          className="inline-block mt-2 hover:text-violet-300 transition"
-        >
-          ↑ Back to Top
-        </a>
+      {/* Bottom */}
+      <div className="border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+        <p>© 2025 XYZ.com — All Rights Reserved</p>
       </div>
     </footer>
   );

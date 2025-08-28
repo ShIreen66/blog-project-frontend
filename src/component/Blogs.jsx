@@ -1,259 +1,121 @@
 import React from "react";
-import Footer from "./Footer";
 
 const Blogs = () => {
   return (
-    <div className="w-full h-screen overflow-y-auto ">
-      <h1 className="text-center pt-6 font-extrabold text-5xl">Blogs</h1>
-      <p className="text-center my-5 font-medium text-lg">
-        Bringing you thoughtful stories, one post at a time, to spark ideas and
-        start conversations.
-      </p>
-      <div className="w-full h-20  flex justify-between items-center px-15">
-        <div className=" flex justify-center items-center gap-3">
-          {" "}
-          <label htmlFor="category" className="text-lg font-medium">
+    <div className="w-full min-h-screen bg-gradient-to-b from-violet-50 to-violet-100 px-6 sm:px-10 lg:px-20 py-12">
+      {/* Heading */}
+      <div className="text-center max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent ">
+          Blogs
+        </h1>
+        <p className="text-lg text-gray-600">
+          Bringing you thoughtful stories, one post at a time, to spark ideas and
+          start conversations.
+        </p>
+      </div>
+
+      {/* Filters */}
+      <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* Category */}
+        <div className="flex items-center gap-3">
+          <label htmlFor="category" className="text-lg font-medium text-gray-700">
             Category
           </label>
           <select
-            name="category"
-            id=""
-            className="border text-lg outline-0 px-2 py-1 rounded"
+            id="category"
+            className="border-none shadow-sm bg-white text-base outline-none px-3 py-2 rounded-xl"
           >
             <option value="All">All</option>
-            <option value="education">education</option>
-            <option value="sports">sports</option>
-            <option value="movies">movies</option>
+            <option value="education">Education</option>
+            <option value="sports">Sports</option>
+            <option value="movies">Movies</option>
           </select>
         </div>
-        <div className=" flex gap-2 items-center">
-          <label htmlFor="search" className="text-lg font-medium">
-            Search
-          </label>
-          <input
-            type="text"
-            className="border outline-0 px-2 py-1 rounded text-lg font-medium"
-            placeholder="Serch by some keywords..."
-          />
 
-          <label htmlFor="sort" className="text-lg font-medium">
-            Sort By
-          </label>
-          <select
-            name="category"
-            id=""
-            className="border text-lg outline-0 px-2 py-1 rounded"
-          >
-            <option value="All">All</option>
-            <option value="letest">letest blogs</option>
-            <option value="following ">following </option>
-          </select>
+        {/* Search & Sort */}
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-4">
+          <div className="flex items-center gap-2">
+            <label htmlFor="search" className="text-lg font-medium text-gray-700">
+              Search
+            </label>
+            <input
+              type="text"
+              className="shadow-sm px-3 py-2 rounded-xl text-base bg-white outline-none w-56"
+              placeholder="Search blogs..."
+            />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <label htmlFor="sort" className="text-lg font-medium text-gray-700">
+              Sort By
+            </label>
+            <select
+              id="sort"
+              className="shadow-sm bg-white text-base outline-none px-3 py-2 rounded-xl"
+            >
+              <option value="All">All</option>
+              <option value="latest">Latest</option>
+              <option value="following">Following</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div className="w-full  flex gap-14  flex-wrap p-6 ">
-        <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm hover:bg-violet-50">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3 ">
-            <div className="h-full flex  gap-2 items-center px-3 ">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-                alt=""
-                className="h-[70%] cursor-pointer aspect-square object-cover rounded-full hover:scale-125"
-              />
-              <p className="text-lg font-medium">name hai </p>
+
+      {/* Blog Cards */}
+      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div
+            key={item}
+            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 flex flex-col overflow-hidden"
+          >
+            {/* Card Header */}
+            <div className="flex items-center justify-between bg-violet-100 px-4 py-3">
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60"
+                  alt="author"
+                  className="h-10 w-10 rounded-full object-cover hover:scale-110 transition"
+                />
+                <p className="font-medium text-gray-800">John Doe</p>
+              </div>
+              <button className="bg-violet-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-violet-700 transition">
+                Follow
+              </button>
             </div>
 
-            <button className="cursor-pointer text-sm font-medium bg-violet-700 text-white px-3 py-2 rounded hover:bg-violet-900 hover:scale-105">
-              Follow
-            </button>
-            {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
-          </div>
-          <img
-            src="news.webp "
-            alt=""
-            className="h-[45%] w-[90%] mx-auto rounded object-cover object-center hover:scale-110"
-          />
-          <h2 className="text-2xl/6 font-bold px-2 py-1 ">
-            Lorem lorem ipsum dolor sit. Lorem ipsum Lorem, ipsum.
-          </h2>
-          <p
-            className="text-lg/4 h-[15%]  
-             px-2"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            eos!Lorem Lorem ipsum dolor ...
-          </p>
+            {/* Blog Image */}
+            <img
+              src="https://images.unsplash.com/photo-1693774823736-f23de11e8c34?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="blog"
+              className="w-full h-48 object-cover hover:scale-110"
+            />
 
-          <div className=" w-full h-[10%] bg-violet-100  flex items-center px-3 gap-3">
-            <p className="flex items-center text-xl font-medium gap-1">
-              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
-            </p>
-            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
-          </div>
-        </div>
-        <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3">
-            <div className="h-full flex  gap-2 items-center px-3">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-                alt=""
-                className="h-[70%] cursor-pointer aspect-square object-cover rounded-full"
-              />
-              <p className="text-lg font-medium">name hai </p>
+            {/* Content */}
+            <div className="flex flex-col flex-1 px-4 py-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-2">
+                Lorem ipsum dolor sit amet consectetur.
+              </h2>
+              <p className="text-gray-600 flex-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                eos! Lorem ipsum dolor sit amet...
+              </p>
             </div>
 
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded ">
-              Follow
-            </button>
-            {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
-          </div>
-          <img
-            src="news.webp "
-            alt=""
-            className="h-[45%] w-[90%] mx-auto rounded object-cover object-center"
-          />
-          <h2 className="text-2xl/6 font-bold px-2 py-1 ">
-            Lorem lorem ipsum dolor sit. Lorem ipsum Lorem, ipsum.
-          </h2>
-          <p
-            className="text-lg/4 h-[15%]  
-             px-2"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            eos!Lorem Lorem ipsum dolor ...
-          </p>
-
-          <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
-            <p className="flex items-center text-xl font-medium gap-1">
-              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
-            </p>
-            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
-          </div>
-        </div>
-        <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3">
-            <div className="h-full flex  gap-2 items-center px-3">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-                alt=""
-                className="h-[70%] cursor-pointer aspect-square object-cover rounded-full"
-              />
-              <p className="text-lg font-medium">name hai </p>
+            {/* Footer */}
+            <div className="flex items-center gap-6 px-4 py-3 border-t bg-violet-50">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-red-600 transition">
+                <i className="ri-heart-line text-xl"></i> <span>13</span>
+              </button>
+              <button className="flex items-center gap-1 text-gray-700 hover:text-violet-600 transition">
+                <i className="ri-chat-3-line text-xl"></i>
+              </button>
+              <button className="flex items-center gap-1 text-gray-700 hover:text-violet-600 transition">
+                <i className="ri-share-forward-line text-xl"></i>
+              </button>
             </div>
-
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
-              Follow
-            </button>
-            {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
           </div>
-          <img
-            src="news.webp "
-            alt=""
-            className="h-[45%] w-[90%] mx-auto rounded object-cover object-center"
-          />
-          <h2 className="text-2xl/6 font-bold px-2 py-1 ">
-            Lorem lorem ipsum dolor sit. Lorem ipsum Lorem, ipsum.
-          </h2>
-          <p
-            className="text-lg/4 h-[15%]  
-             px-2"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            eos!Lorem Lorem ipsum dolor ...
-          </p>
-
-          <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
-            <p className="flex items-center text-xl font-medium gap-1">
-              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
-            </p>
-            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
-          </div>
-        </div>
-          <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3">
-            <div className="h-full flex  gap-2 items-center px-3">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-                alt=""
-                className="h-[70%] cursor-pointer aspect-square object-cover rounded-full"
-              />
-              <p className="text-lg font-medium">name hai </p>
-            </div>
-
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
-              Follow
-            </button>
-            {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
-          </div>
-          <img
-            src="news.webp "
-            alt=""
-            className="h-[45%] w-[90%] mx-auto rounded object-cover object-center"
-          />
-          <h2 className="text-2xl/6 font-bold px-2 py-1 ">
-            Lorem lorem ipsum dolor sit. Lorem ipsum Lorem, ipsum.
-          </h2>
-          <p
-            className="text-lg/4 h-[15%]  
-             px-2"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            eos!Lorem Lorem ipsum dolor ...
-          </p>
-
-          <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
-            <p className="flex items-center text-xl font-medium gap-1">
-              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
-            </p>
-            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
-          </div>
-        </div>
-          <div className="card h-100 w-[30%]  flex flex-col justify-between rounded-xl overflow-hidden shadow-sm">
-          <div className="w-full h-[15%] bg-[#f3f4f6]   flex   gap-2 items-center justify-between px-3">
-            <div className="h-full flex  gap-2 items-center px-3">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-                alt=""
-                className="h-[70%] cursor-pointer aspect-square object-cover rounded-full"
-              />
-              <p className="text-lg font-medium">name hai </p>
-            </div>
-
-            <button className="cursor-pointer text-sm font-medium bg-blue-300 px-3 py-2 rounded">
-              Follow
-            </button>
-            {/* <button className="text-sm font-medium border-blue-300 border-2 px-3 py-2 rounded">unfollow</button> */}
-          </div>
-          <img
-            src="news.webp "
-            alt=""
-            className="h-[45%] w-[90%] mx-auto rounded object-cover object-center"
-          />
-          <h2 className="text-2xl/6 font-bold px-2 py-1 ">
-            Lorem lorem ipsum dolor sit. Lorem ipsum Lorem, ipsum.
-          </h2>
-          <p
-            className="text-lg/4 h-[15%]  
-             px-2"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            eos!Lorem Lorem ipsum dolor ...
-          </p>
-
-          <div className=" w-full h-[10%] bg-[#f3f4f6]  flex items-center px-3 gap-3">
-            <p className="flex items-center text-xl font-medium gap-1">
-              <i className="ri-heart-line text-2xl cursor-pointer"></i> <p>13</p>
-            </p>
-            <i className="ri-chat-3-line text-2xl cursor-pointer"></i>
-            <i className="ri-share-forward-line text-2xl cursor-pointer"></i>
-          </div>
-        </div>
-        
+        ))}
       </div>
-      <Footer/>
     </div>
   );
 };

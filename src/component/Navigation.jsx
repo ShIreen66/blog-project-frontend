@@ -1,57 +1,55 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 
 const Navigation = () => {
+  const location = useLocation();
+
+  const navItems = [
+    { to: "/", icon: "ri-home-8-line", label: "Home" },
+    { to: "/blogs", icon: "ri-blogger-line", label: "Blogs" },
+    { to: "/about", icon: "ri-information-fill", label: "About Us" },
+    { to: "/contact", icon: "ri-contacts-book-3-fill", label: "Contact Us" },
+  ];
+
   return (
-    <div className="w-full h-full bg-violet-100 text-black p-5 flex flex-col  justify-between cursor-pointer ">
-      
-        <div className="top w-full h-20 text-5xl p-9">Logo</div>
-        <div>
-        <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2 ">
-          <li className="flex gap-3 items-center">
-            <Link to="/">
-              <i className="ri-home-8-line text-2xl"></i>
-              <span className="font-medium ml-2">Home</span>
-            </Link>
-          </li>
+    <div className="w-64 h-screen bg-gradient-to-b from-violet-200 to-violet-100 text-black flex flex-col justify-between shadow-xl fixed">
+      {/* Logo */}
+      <div className="h-20 flex items-center justify-center text-3xl font-bold text-violet-700">
+        <span className="flex items-center gap-2">
+          <i className="ri-fire-fill text-violet-600"></i> Logo
+        </span>
+      </div>
+
+      {/* Navigation Links */}
+      <nav className="flex-1 px-4 py-6">
+        <ul className="space-y-3">
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <Link
+                to={item.to}
+                className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-300
+                  ${
+                    location.pathname === item.to
+                      ? "bg-violet-600 text-white shadow-md"
+                      : "text-gray-700 hover:bg-violet-200 hover:text-violet-800"
+                  }`}
+              >
+                <i className={`${item.icon} text-xl`}></i>
+                <span className="font-medium">{item.label}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
-        <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
-          <li className="flex gap-4 items-center">
-            <Link to="/blogs">
-              <i className="ri-blogger-line text-2xl"></i>
-              <span className="font-medium ml-2">Blogs</span>
-            </Link>
-          </li>
-        </ul>
-        <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
-          <li className="flex gap-4 items-center">
-            <Link to="/about">
-              <i className="ri-information-fill text-2xl"></i>
-              <span className="font-medium ml-2">About Us</span>
-            </Link>
-          </li>
-        </ul>
-        <ul className=" p-2 text-lg hover:outline-2 hover:outline-white hover:outline-offset-2">
-          <li className="flex gap-4 items-center">
-            <Link to="/contact">
-              <i className="ri-contacts-book-3-fill text-2xl"></i>
-              <span className="font-medium ml-2">Contact Us</span>
-            </Link>
-          </li>
-        </ul>
-        </div>
-      
-      <div className="w-full h-15 flex justify-center items-center  ">
-        <Link to={"/signup"} className="h-[80%] bg-violet-600 text-white rounded-[10px] py-2 px-3 text-lg font-medium mx-auto hover:focus:scale-100 hover:bg-violet-900">
-          Signup <i className="ri-arrow-right-line"></i>
+      </nav>
+
+      {/* Signin Button */}
+      <div className="p-4">
+        <Link
+          to="/signin"
+          className="w-full flex items-center justify-center gap-2 bg-violet-600 text-white rounded-xl py-2 text-lg font-medium transition-all duration-300 hover:bg-violet-700 hover:scale-105"
+        >
+          Signin <i className="ri-arrow-right-line"></i>
         </Link>
-        {/* <div className="w-full h-full flex  items-center justify-center gap-4">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww"
-            className="h-[70%] aspect-square rounded-full object-cover"
-          ></img>
-          <p className="font-medium">Umashankar Uikey</p>
-        </div> */}
       </div>
     </div>
   );

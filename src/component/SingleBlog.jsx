@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const SingleBlog = () => {
   return (
     <div>
-      <div className="w-full h-screen overflow-y-auto">
+      <div className="w-100 h-screen overflow-y-auto">
         <h2 className="m-5 text-3xl font-medium  ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque
           quibusdam fuga voluptatem quae numquam voluptatum natus ipsa magnam
@@ -71,7 +71,7 @@ const SingleBlog = () => {
             placeholder="Add Your own Views"
           />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

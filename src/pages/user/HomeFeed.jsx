@@ -1,18 +1,18 @@
-import Blogs from "../../component/Blogs";
+// import Blogs from "../../component/Blogs";
 import HeroSection from "../../component/HeroSection";
 import Navigation from "../../component/Navigation";
 
 
 const HomeFeed = () => {
   return (
-    <div className="h-screen w-screen  flex">
-      <div className="h-full w-[20%] ">
+    <div className="h-[100vh] w-[100vw] overflow-auto flex">
+      <div className="h-full w-[16%] ">
         <Navigation />
       </div>
-      <div className="h-full w-[80%] ">
+      <div className="h-full w-[90%] ">
         <HeroSection />
 {/* <SingleBlog/> */}
-        <Blogs/>
+        {/* <Blogs/> */}
       </div>
     </div>
   );
