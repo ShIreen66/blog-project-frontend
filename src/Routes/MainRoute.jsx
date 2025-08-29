@@ -28,15 +28,15 @@ const MainRoute = () => {
   return (
     <Routes>
       {/* User Routes */}
-      <Route path="/" element={<HomeFeed />} />
-      <Route path="/about" element={<UserAbout />} />
+      <Route path="/" element={<HomeFeed />} /> // kaam ho gaya
+      <Route path="/about" element={<UserAbout />} /> // kaam ho gaya
       <Route path="/signup" element={<Register />} />
       <Route path="/signin" element={<Login />} />
-      <Route path="/create/post" element={<CreatePost />} />
-      <Route path="/edit/post" element={<EditPost />} />
+      <Route path="/create-post" element={<CreatePost />} />
+      <Route path="/edit-post" element={<EditPost />} />
       <Route path="/profile/setting" element={<UserSetting />} />
-      <Route path="/blogs" element={<SingleBlog />} />
-      <Route path="/contact" element={<UserContact />} />
+      <Route path="/blogs" element={<SingleBlog />} /> // kaam ho gaya
+      <Route path="/contact" element={<UserContact />} /> // kaam ho gaya
 
       {/* User Dashboard with nested routes */}
       <Route path="/dashboard" element={<UserDashboard />}>

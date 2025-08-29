@@ -1,48 +1,61 @@
 import React from "react";
+import Footer from "../../component/Footer";
 
 const About = () => {
   return (
     <>
-      <section className="w-full bg-gradient-to-b from-violet-50 to-violet-100 px-6 sm:px-10 lg:px-20 py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-        {/* Left */}
+      <section className="w-full bg-gradient-to-b from-violet-50 via-white to-violet-100 px-6 sm:px-10 lg:px-20 py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-16">
+        {/* Left Content */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-snug relative">
-            About Us
-            <span className="absolute -bottom-2 left-0 w-16 h-1 bg-violet-600 rounded-full"></span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-8 leading-snug relative">
+            About{" "}
+            <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent">
+              Us
+            </span>
+            <span className="absolute -bottom-3 left-0 w-20 h-1 bg-violet-600 rounded-full"></span>
           </h2>
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Welcome to <span className="font-semibold text-violet-700">Our Blog</span> —
-            a space where we explore web development, design trends, and real-world
-            project tips. Our mission is to simplify complex tech topics and make
-            learning fun.
+          <p className="text-gray-700 text-lg leading-relaxed mb-6 max-w-xl">
+            Welcome to{" "}
+            <span className="font-semibold text-violet-700">Our Blog</span> — a
+            space where we explore{" "}
+            <span className="font-medium text-fuchsia-600">
+              web development, design trends,
+            </span>{" "}
+            and real-world project tips. Our mission is to simplify complex tech
+            topics and make learning fun.
           </p>
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-8">
-            Created by a passionate team of developers, this blog is for beginners,
-            self-learners, and professionals looking to stay updated with the latest
-            industry insights.
+          <p className="text-gray-700 text-lg leading-relaxed mb-10 max-w-xl">
+            Created by a passionate team of developers, this blog is for{" "}
+            <span className="text-violet-700 font-medium">beginners</span>,{" "}
+            <span className="text-violet-700 font-medium">self-learners</span>,
+            and professionals looking to stay updated with the latest industry
+            insights.
           </p>
 
-          <button className="bg-violet-600 text-white px-8 py-3 rounded-xl font-medium shadow-md hover:bg-violet-700 hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+          <button className="bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-105">
             Get in Touch
           </button>
         </div>
 
-        {/* Right */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <div className="relative w-full max-w-md">
+        {/* Right Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          <div className="relative w-full max-w-md group">
             <img
               src="/people.avif"
               alt="Team working together"
-              className="w-full rounded-3xl shadow-xl transition-transform duration-500 hover:scale-105"
+              className="w-full rounded-3xl shadow-xl transition-transform duration-500 group-hover:scale-105"
             />
-            {/* Decorative gradient circle */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-violet-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+            {/* Gradient decorative blobs */}
+            <div className="absolute -top-8 -left-8 w-28 h-28 bg-gradient-to-r from-violet-300 to-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+            <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-gradient-to-r from-fuchsia-300 to-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 };

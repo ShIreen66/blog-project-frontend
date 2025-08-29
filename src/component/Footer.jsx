@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#0f172a] text-gray-300 pt-20 pb-10 px-6 md:px-20 overflow-hidden">
+    <footer className=" w-full bg-[#0f172a] text-gray-300  pb-6 px-6 md:px-20 overflow-hidden">
       {/* Curved Top Wave */}
-      <div className="absolute -top-[1px] left-0 w-full overflow-hidden leading-[0] rotate-180">
+      <div className=" w-full overflow-hidden leading-[0] rotate-180">
         <svg
           className="relative block w-full h-12 text-[#0f172a]"
           xmlns="http://www.w3.org/2000/svg"
@@ -69,28 +69,29 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4">Newsletter</h2>
-          <p className="text-sm text-gray-400 mb-3">
-            Subscribe to get the latest articles.
-          </p>
-          <form className="flex flex-col sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-3 text-gray-200 bg-[#1e293b] rounded-md sm:rounded-r-none sm:rounded-l-md mb-2 sm:mb-0 sm:mr-2 w-full focus:outline-none focus:ring-2 focus:ring-violet-500"
-            />
-            <button
-              type="submit"
-              className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-md sm:rounded-l-none sm:rounded-r-md transition-transform hover:scale-105"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+  <h2 className="text-lg font-semibold text-white mb-4">Newsletter</h2>
+  <p className="text-sm text-gray-400 mb-3">
+    Subscribe to get the latest articles.
+  </p>
+  <form className="flex flex-col">
+    <input
+      type="email"
+      placeholder="Enter Your Email Here "
+      className="p-3 w-full text-gray-200 bg-[#1e293b] rounded-2xl mb-3 focus:outline-none focus:ring-2 focus:ring-violet-500"
+    />
+    <button
+      type="submit"
+      className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-2xl transition-transform cursor-pointer"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>
+
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+      <div className="border-t border-gray-700 pt-2 mb-0 text-center text-gray-500 text-sm">
         <p>© 2025 XYZ.com — All Rights Reserved</p>
       </div>
     </footer>

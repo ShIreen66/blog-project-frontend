@@ -13,6 +13,7 @@ const UserAbout = () => {
       <div className="w-[100%] h-screen ">
         <About />
       </div>
+      
     </div>
   );
 };
