@@ -1,7 +1,7 @@
 
 const SmallHero = (props) => {
   const { hight, category, heading, img } = props;
-  console.log(hight);
+  // console.log(hight);
 
   return (
     <div

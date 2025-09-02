@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../component/Footer";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -34,9 +35,13 @@ const About = () => {
             insights.
           </p>
 
-          <button className="bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-105">
-            Get in Touch
-          </button>
+        <Link
+  to="/contact"
+  className="inline-block bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-110"
+>
+  Get in touch
+</Link>
+
         </div>
 
         {/* Right Image Section */}

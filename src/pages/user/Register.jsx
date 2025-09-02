@@ -1,58 +1,99 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const registeredUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const existingUser = registeredUsers.find((u) => u.email === email);
+    if (existingUser) {
+      alert("User already registered!");
+      return;
+    }
+
+    const newUser = { username, email, password };
+    const updatedUsers = [...registeredUsers, newUser];
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+    alert("Registration successful! Please login.");
+    navigate("/signin");
+  };
+
   return (
     <div className="h-screen flex items-center justify-center bg-gray-900 p-4">
-      <div className="min-h-2/3 flex flex-col  md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
+      <div className="flex flex-col md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
         {/* Left Section */}
-          <div className="md:w-1/2 w-full p-8 bg-gray-50 flex flex-col justify-center">
-          <div className="text-center mb-6 ">
+        <div className="md:w-1/2 w-full p-8 bg-gray-50 flex flex-col justify-center">
+          <div className="text-center mb-6">
             <h2 className="text-2xl font-semibold font-[SUSE]">
               Let Us Know You!
             </h2>
           </div>
-          <form className="flex flex-col gap-2">
-            <label htmlFor="username">Username:</label>
+          <form className="flex flex-col gap-2" onSubmit={handleRegister}>
+            <label>Username:</label>
             <input
               type="text"
               placeholder="Enter Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
+              required
             />
-            <label htmlFor="username">Email:</label>
+            <label>Email:</label>
             <input
               type="email"
               placeholder="Enter Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
+              required
             />
-            <label htmlFor="username">Password:</label>
+            <label>Password:</label>
             <input
               type="password"
               placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
+              required
             />
+
             <button className="bg-[#101828] text-white py-3 rounded-lg font-semibold hover:bg-gray-700 transition duration-300 font-[SUSE] cursor-pointer">
               Register →
             </button>
-              <p className="text-center font-medium text-lg ">OR</p>
-            <button className="p-1 rounded-lg border cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2">
-              <img className="h-12 rounded-full" src="/google_icon.png" alt="" /><p>Continue with Google</p>
+            <p className="text-center font-medium text-lg">OR</p>
+            <button
+              type="button"
+              className="p-1 rounded-lg border cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2"
+            >
+              <img className="h-12 rounded-full" src="/google_icon.png" alt="" />
+              <p>Continue with Google</p>
             </button>
           </form>
         </div>
-        <div className="md:w-1/2   text-white flex flex-col p-8 relative justify-around z-10">
+
+        {/* Right Section */}
+        <div className="md:w-1/2 text-white flex flex-col p-8 relative justify-around z-10">
           <video
             autoPlay
             loop
             muted
             className="absolute top-0 left-0 w-full h-full object-cover z-0"
           >
-            <source src="/public/video.mp4" />
+            <source src="/video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute top-0 left-0 w-full h-full bg-[#0000009c] object-cover z-10"></div>
-  
+          <div className="absolute top-0 left-0 w-full h-full bg-[#0000009c] z-10"></div>
+
           <div className="z-10">
             <h1 className="text-4xl font-bold leading-tight mb-2 text-center font-[SUSE]">
-              Because every thought 
+              Because every thought
               <br />
               deserves a platform
             </h1>
@@ -66,15 +107,12 @@ const Register = () => {
             </p>
             <Link
               to="/signin"
-              className="mt-2 px-6 py-2 mx-auto bg-white text-black rounded-lg font-semibold text-center  hover:bg-gray-200 font-[SUSE]  "
+              className="mt-2 px-6 py-2 mx-auto bg-white text-black rounded-lg font-semibold text-center hover:bg-gray-200 font-[SUSE]"
             >
               Login
             </Link>
           </div>
         </div>
-
-        {/* Right Section */}
-      
       </div>
     </div>
   );

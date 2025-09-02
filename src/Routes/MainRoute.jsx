@@ -9,7 +9,6 @@ import Following from "../component/Following";
 import Post from "../component/Post";
 import CreatePost from "../component/CreatePost";
 import EditPost from "../component/EditPost";
-import About from "../pages/user/About";
 import UserSetting from "../pages/user/UserSetting";
 import AdminPosts from "../pages/Admin/AdminPosts";
 import AdminHero from "../pages/Admin/AdminHero";
@@ -23,23 +22,55 @@ import AdminDashboard from "../pages/Admin/AdminDashboard";
 import UserAbout from "../pages/user/UserAbout";
 import SingleBlog from "../pages/user/SingleBlog";
 import UserContact from "../pages/user/UserContact";
+import ProtectedRoute from "../Routes/ProtectedRoute";
+import AdminProtectedRoute from "../Routes/AdminProtectedRoute";
 
 const MainRoute = () => {
   return (
     <Routes>
-      {/* User Routes */}
-      <Route path="/" element={<HomeFeed />} /> // kaam ho gaya
-      <Route path="/about" element={<UserAbout />} /> // kaam ho gaya
+      {/* Public User Routes */}
+      <Route path="/" element={<HomeFeed />} />
+      <Route path="/about" element={<UserAbout />} />
       <Route path="/signup" element={<Register />} />
       <Route path="/signin" element={<Login />} />
-      <Route path="/create-post" element={<CreatePost />} />
-      <Route path="/edit-post" element={<EditPost />} />
-      <Route path="/profile/setting" element={<UserSetting />} />
-      <Route path="/blogs" element={<SingleBlog />} /> // kaam ho gaya
-      <Route path="/contact" element={<UserContact />} /> // kaam ho gaya
+      <Route path="/blogs" element={<SingleBlog />} />
+      <Route path="/contact" element={<UserContact />} />
 
-      {/* User Dashboard with nested routes */}
-      <Route path="/dashboard" element={<UserDashboard />}>
+      {/* Protected User Routes */}
+      <Route
+        path="/create-post"
+        element={
+          <ProtectedRoute>
+            <CreatePost />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/edit-post"
+        element={
+          <ProtectedRoute>
+            <EditPost />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile/setting"
+        element={
+          <ProtectedRoute>
+            <UserSetting />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* User Dashboard (Protected) */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <UserDashboard />
+          </ProtectedRoute>
+        }
+      >
         <Route path="profile" element={<ProfilePage />}>
           <Route path="follower" element={<Follower />} />
           <Route path="post" element={<Post />} />
@@ -47,8 +78,15 @@ const MainRoute = () => {
         </Route>
       </Route>
 
-      {/* Admin Dashboard and all admin pages as nested routes */}
-      <Route path="/admin" element={<AdminDashboard />}>
+      {/* Admin Dashboard (Admin Protected) */}
+      <Route
+        path="/admin"
+        element={
+          <AdminProtectedRoute>
+            <AdminDashboard />
+          </AdminProtectedRoute>
+        }
+      >
         <Route path="dashboard" element={<AdminHero />} />
         <Route path="posts" element={<AdminPosts />} />
         <Route path="categories" element={<AdminCategories />} />

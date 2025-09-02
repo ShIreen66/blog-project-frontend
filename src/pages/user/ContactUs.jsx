@@ -24,9 +24,9 @@ const ContactUs = () => {
               Fill out the form and our team will get back to you within 24 hours.
             </p>
             <div className="space-y-4 text-gray-700">
-              <p><i className="ri-map-pin-2-line text-violet-600 text-xl mr-2"></i> 123 Street, New Delhi, India</p>
+              <p><i className="ri-map-pin-2-line text-violet-600 text-xl mr-2"></i>  India</p>
               <p><i className="ri-phone-line text-violet-600 text-xl mr-2"></i> +91 9876543210</p>
-              <p><i className="ri-mail-line text-violet-600 text-xl mr-2"></i> support@example.com</p>
+              <p><i className="ri-mail-line text-violet-600 text-xl mr-2"></i> abc@example.com</p>
             </div>
             <div className="flex gap-4 mt-6">
               <a href="#" className="text-violet-600 hover:text-violet-800 text-2xl"><i className="ri-facebook-circle-fill"></i></a>

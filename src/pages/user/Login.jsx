@@ -1,11 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { loginUser } from "../../app/features/authSlice";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Login attempt with:", { email, password });
+
+    // Dispatch Redux action first
+    dispatch(loginUser({ email, password }));
+
+    // Check admin credentials
+    if (email === "admin@me.com" && password === "admin") {
+      console.log("Admin login successful - navigating to /admin");
+      setTimeout(() => navigate("/admin/dashboard"), 100); // Small delay for Redux update
+      return;
+    }
+
+    // Check regular user credentials
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const existingUser = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (existingUser) {
+      console.log("User login successful - navigating to /");
+      setTimeout(() => navigate("/"), 100);
+    } else {
+      console.log("Invalid credentials");
+      alert("Invalid email or password!");
+    }
+  };
+
   return (
     <div className="h-screen flex items-center justify-center bg-gray-900 p-4">
-      <div className="min-h-2/3 flex flex-col  md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
+      <div className="min-h-2/3 flex flex-col md:flex-row w-full max-w-5xl bg-white shadow-xl rounded-2xl overflow-hidden">
         {/* Left Section */}
-        <div className="md:w-1/2   text-white flex flex-col p-8 relative justify-around z-10">
+        <div className="md:w-1/2 text-white flex flex-col p-8 relative justify-around z-10">
           <video
             autoPlay
             loop
@@ -18,7 +55,7 @@ const Login = () => {
 
           <div className="z-10">
             <h1 className="text-4xl font-bold leading-tight mb-2 text-center font-[SUSE]">
-              Because every thought 
+              Because every thought
               <br />
               deserves a platform
             </h1>
@@ -28,11 +65,11 @@ const Login = () => {
           </div>
           <div className="z-10 flex flex-col justify-center gap-2">
             <p className="text-sm text-center text-white font-medium font-[SUSE]">
-              Have an account?
+              Don't have an account?
             </p>
             <Link
               to="/signup"
-              className="mt-2 px-6 py-2 mx-auto bg-white text-black rounded-lg font-semibold text-center  hover:bg-gray-200 font-[SUSE]  "
+              className="mt-2 px-6 py-2 mx-auto bg-white text-black rounded-lg font-semibold text-center hover:bg-gray-200 font-[SUSE]"
             >
               Register
             </Link>
@@ -41,30 +78,49 @@ const Login = () => {
 
         {/* Right Section */}
         <div className="md:w-1/2 w-full p-8 bg-gray-50 flex flex-col justify-center">
-          <div className="text-center mb-6 ">
+          <div className="text-center mb-6">
             <h2 className="text-2xl font-semibold font-[SUSE]">
               Welcome Back!
             </h2>
           </div>
-          <form className="flex flex-col gap-2">
-            <label htmlFor="username">Email:</label>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+            <label htmlFor="email">Email:</label>
             <input
+              id="email"
               type="email"
               placeholder="Enter Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
+              required
             />
-            <label htmlFor="username">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
+              id="password"
               type="password"
               placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE]"
+              required
             />
-            <button className="bg-[#101828] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 font-[SUSE] cursor-pointer">
+            <button
+              type="submit"
+              className="bg-[#101828] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 font-[SUSE] cursor-pointer"
+            >
               Login →
             </button>
-            <p className="text-center font-medium text-lg ">OR</p>
-            <button className="p-1 rounded-lg border   cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2">
-              <img className="h-12 rounded-full" src="/google_icon.png" alt="" /><p>Continue with Google</p>
+            <p className="text-center font-medium text-lg">OR</p>
+            <button
+              type="button"
+              className="p-1 rounded-lg border cursor-pointer border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#10182874] font-[SUSE] font-medium flex justify-center items-center gap-2"
+            >
+              <img
+                className="h-12 rounded-full"
+                src="/google_icon.png"
+                alt="Google icon"
+              />
+              <p>Continue with Google</p>
             </button>
           </form>
         </div>
