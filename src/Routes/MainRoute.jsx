@@ -37,6 +37,16 @@ const MainRoute = () => {
       <Route path="/contact" element={<UserContact />} />
 
       {/* Protected User Routes */}
+
+      <Route
+        path="/post"
+        element={
+          <ProtectedRoute>
+            <Post />
+          </ProtectedRoute>
+        }
+      />
+
       <Route
         path="/create-post"
         element={

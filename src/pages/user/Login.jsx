@@ -13,17 +13,18 @@ const Login = () => {
     e.preventDefault();
     console.log("Login attempt with:", { email, password });
 
-    // Dispatch Redux action first
+    // Redux action dispatch
     dispatch(loginUser({ email, password }));
 
-    // Check admin credentials
+    // ✅ Admin login
     if (email === "admin@me.com" && password === "admin") {
       console.log("Admin login successful - navigating to /admin");
-      setTimeout(() => navigate("/admin/dashboard"), 100); // Small delay for Redux update
+      localStorage.setItem("token", "admin-token"); // Save admin token
+      setTimeout(() => navigate("/admin/dashboard"), 100);
       return;
     }
 
-    // Check regular user credentials
+    // ✅ Regular user login
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const existingUser = users.find(
       (u) => u.email === email && u.password === password
@@ -31,6 +32,7 @@ const Login = () => {
 
     if (existingUser) {
       console.log("User login successful - navigating to /");
+      localStorage.setItem("token", JSON.stringify({ email: existingUser.email })); // Save user token
       setTimeout(() => navigate("/"), 100);
     } else {
       console.log("Invalid credentials");

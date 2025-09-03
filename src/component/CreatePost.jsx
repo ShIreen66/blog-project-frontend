@@ -1,74 +1,126 @@
-import { useRef, useState } from 'react';
-import EmojiPicker from 'emoji-picker-react';
+import { useRef, useState } from "react";
+import EmojiPicker from "emoji-picker-react";
+import Navigation from "./Navigation";
 
 const CreatePost = () => {
   const fileInputRef = useRef(null);
   const imageInputRef = useRef(null);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [content, setContent] = useState('');
-  const [heading, setHeading] = useState('');
+  const [content, setContent] = useState("");
+  const [heading, setHeading] = useState("");
+  const [category, setCategory] = useState("");
+  const [imagePreview, setImagePreview] = useState(null);
+  const [fileName, setFileName] = useState("");
 
   const handleFileClick = () => fileInputRef.current.click();
   const handleImageClick = () => imageInputRef.current.click();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log('File uploaded:', file);
+    if (file) {
+      setFileName(file.name);
+      console.log("File uploaded:", file);
+    }
   };
 
   const handleImageChange = (e) => {
     const image = e.target.files[0];
-    console.log('Image uploaded:', image);
+    if (image) {
+      setImagePreview(URL.createObjectURL(image));
+      console.log("Image uploaded:", image);
+    }
   };
 
   const onEmojiClick = (emojiData) => {
-    setContent(prev => prev + emojiData.emoji);
+    setContent((prev) => prev + emojiData.emoji);
   };
 
   return (
-    <div className="w-full min-h-screen bg-violet-200 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-white rounded-lg shadow-md p-6 space-y-4 border border-gray-200 relative">
-
-        
-        <div className="header text-center pb-2">
-          <h1 className="text-xl font-semibold text-gray-800">Create Post</h1>
+    <>
+    
+    <div className="w-full min-h-screen bg-gradient-to-br from-violet-300 to-purple-200 flex items-center justify-center p-6">
+      
+    
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 space-y-5 border border-gray-100 relative">
+        {/* Header */}
+        <div className="text-center pb-3 border-b">
+          <h1 className="text-2xl font-bold text-violet-700">
+            ✍️ Create a New Post
+          </h1>
+          <p className="text-gray-500 text-sm mt-1">
+            Share your thoughts with the community
+          </p>
         </div>
 
-        
+        {/* Category */}
         <input
           type="text"
-          value={heading}
-          onChange={(e) => setHeading(e.target.value)}
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
           placeholder="Category"
-          className="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-violet-400"
+          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
         />
 
-        
+        {/* Heading */}
         <input
           type="text"
           value={heading}
           onChange={(e) => setHeading(e.target.value)}
           placeholder="Heading"
-          className="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-violet-400"
-        />
-        <textarea
-          rows={9}
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Description..."
-          className="w-full p-3 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-violet-400"
+          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
         />
 
-        
+        {/* Description */}
+        <textarea
+          rows={8}
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Write your story..."
+          className="w-full p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
+        />
+
+        {/* Preview Section */}
+        {(imagePreview || fileName) && (
+          <div className="bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-sm space-y-3">
+            {imagePreview && (
+              <div className="relative w-full">
+                <img
+                  src={imagePreview}
+                  alt="Preview"
+                  className="w-full h-56 object-cover rounded-lg shadow-md"
+                />
+                <button
+                  onClick={() => setImagePreview(null)}
+                  className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600"
+                >
+                  Remove
+                </button>
+              </div>
+            )}
+            {fileName && (
+              <div className="flex items-center justify-between bg-white px-3 py-2 rounded border text-sm text-gray-700 shadow">
+                <span>{fileName}</span>
+                <button
+                  onClick={() => setFileName("")}
+                  className="text-red-500 hover:underline text-xs"
+                >
+                  Remove
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Emoji Picker */}
         {showEmojiPicker && (
-          <div className="absolute bottom-28 right-6 z-20 scale-90 w-[250px]">
+          <div className="absolute bottom-32 right-8 z-20 scale-90 w-[280px] drop-shadow-lg">
             <EmojiPicker onEmojiClick={onEmojiClick} />
           </div>
         )}
 
-        
-        <div className="flex items-center text-gray-500 gap-2">
-          
+        {/* Toolbar */}
+        <div className="flex items-center text-gray-500 gap-3 pt-2">
+          {/* Image Upload */}
           <input
             type="file"
             accept="image/*"
@@ -79,12 +131,12 @@ const CreatePost = () => {
           <button
             onClick={handleImageClick}
             title="Upload Image"
-            className="p-2 rounded hover:bg-violet-200 transition duration-150"
+            className="p-2 rounded-full hover:bg-violet-100 transition"
           >
             <i className="ri-image-line text-xl"></i>
           </button>
 
-          
+          {/* File Upload */}
           <input
             type="file"
             ref={fileInputRef}
@@ -94,33 +146,35 @@ const CreatePost = () => {
           <button
             onClick={handleFileClick}
             title="Attach File"
-            className="p-2 rounded hover:bg-violet-200 transition duration-150"
+            className="p-2 rounded-full hover:bg-violet-100 transition"
           >
             <i className="ri-attachment-line text-xl"></i>
           </button>
 
-          
+          {/* Emoji */}
           <div className="ml-auto">
             <button
-              onClick={() => setShowEmojiPicker(prev => !prev)}
+              onClick={() => setShowEmojiPicker((prev) => !prev)}
               title="Emoji"
-              className="p-2 rounded hover:bg-violet-200 transition duration-150"
+              className="p-2 rounded-full hover:bg-violet-100 transition"
             >
               <i className="ri-emoji-sticker-fill text-xl"></i>
             </button>
           </div>
         </div>
 
-        
-        <div className="flex justify-between items-center pt-4 border-t">
-          <div></div>
-          <div className="space-x-2">
-            <button className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-900 hover:scale-105 transition">Cancel</button>
-            <button className="bg-violet-600 text-white px-4 py-2 rounded hover:bg-violet-900 hover:scale-105 transition">Publish</button>
-          </div>
+        {/* Actions */}
+        <div className="flex justify-end gap-3 pt-5 border-t">
+          <button className="px-5 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm">
+            Cancel
+          </button>
+          <button className="px-5 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold hover:from-violet-700 hover:to-purple-700 transition transform hover:scale-105 shadow-md">
+            Publish 🚀
+          </button>
         </div>
       </div>
     </div>
+    </>
   );
 };
 
