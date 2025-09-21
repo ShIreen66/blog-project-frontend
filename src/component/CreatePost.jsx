@@ -1,3 +1,4 @@
+// CreatePost.jsx
 import { useRef, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import Navigation from "./Navigation";
@@ -11,24 +12,19 @@ const CreatePost = () => {
   const [category, setCategory] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const [fileName, setFileName] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(false); // mobile toggle
 
   const handleFileClick = () => fileInputRef.current.click();
   const handleImageClick = () => imageInputRef.current.click();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setFileName(file.name);
-      console.log("File uploaded:", file);
-    }
+    if (file) setFileName(file.name);
   };
 
   const handleImageChange = (e) => {
     const image = e.target.files[0];
-    if (image) {
-      setImagePreview(URL.createObjectURL(image));
-      console.log("Image uploaded:", image);
-    }
+    if (image) setImagePreview(URL.createObjectURL(image));
   };
 
   const onEmojiClick = (emojiData) => {
@@ -36,145 +32,169 @@ const CreatePost = () => {
   };
 
   return (
-    <>
-    
-    <div className="w-full min-h-screen bg-gradient-to-br from-violet-300 to-purple-200 flex items-center justify-center p-6">
-      
-    
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 space-y-5 border border-gray-100 relative">
-        {/* Header */}
-        <div className="text-center pb-3 border-b">
-          <h1 className="text-2xl font-bold text-violet-700">
-            ✍️ Create a New Post
-          </h1>
-          <p className="text-gray-500 text-sm mt-1">
-            Share your thoughts with the community
-          </p>
-        </div>
+    <div className="flex h-[100vh] overflow-hidden bg-purple-100">
+      {/* Sidebar */}
+      <div
+        className={`fixed sm:relative z-30 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
+        }`}
+      >
+        <Navigation />
+      </div>
 
-        {/* Category */}
-        <input
-          type="text"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          placeholder="Category"
-          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
-        />
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-40 z-20 transition-opacity duration-300 ${
+          sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        } sm:hidden`}
+        onClick={() => setSidebarOpen(false)}
+      ></div>
 
-        {/* Heading */}
-        <input
-          type="text"
-          value={heading}
-          onChange={(e) => setHeading(e.target.value)}
-          placeholder="Heading"
-          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
-        />
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto p-6 flex justify-center items-start relative">
+        {/* Mobile toggle button */}
+        <button
+          className="sm:hidden mb-4 px-4 py-2 bg-violet-600 text-white rounded-lg z-40 fixed top-4 left-4 shadow-lg"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
+          {sidebarOpen ? "Close Menu" : "Open Menu"}
+        </button>
 
-        {/* Description */}
-        <textarea
-          rows={8}
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Write your story..."
-          className="w-full p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
-        />
+        <div className="w-full max-w-2xl space-y-5 mt-12 sm:mt-0">
+          {/* Post Card */}
+          <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-5 border border-gray-100 relative">
+            {/* Header */}
+            <div className="text-center pb-3 border-b">
+              <h1 className="text-2xl font-bold text-violet-700">✍️ Create a New Post</h1>
+              <p className="text-gray-500 text-sm mt-1">
+                Share your thoughts with the community
+              </p>
+            </div>
 
-        {/* Preview Section */}
-        {(imagePreview || fileName) && (
-          <div className="bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-sm space-y-3">
-            {imagePreview && (
-              <div className="relative w-full">
-                <img
-                  src={imagePreview}
-                  alt="Preview"
-                  className="w-full h-56 object-cover rounded-lg shadow-md"
-                />
-                <button
-                  onClick={() => setImagePreview(null)}
-                  className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600"
-                >
-                  Remove
-                </button>
+            {/* Category */}
+            <input
+              type="text"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              placeholder="Category"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
+            />
+
+            {/* Heading */}
+            <input
+              type="text"
+              value={heading}
+              onChange={(e) => setHeading(e.target.value)}
+              placeholder="Heading"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
+            />
+
+            {/* Description */}
+            <textarea
+              rows={8}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Write your story..."
+              className="w-full p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-violet-400 shadow-sm"
+            />
+
+            {/* Preview Section */}
+            {(imagePreview || fileName) && (
+              <div className="bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-sm space-y-3">
+                {imagePreview && (
+                  <div className="relative w-full">
+                    <img
+                      src={imagePreview}
+                      alt="Preview"
+                      className="w-full h-56 object-cover rounded-lg shadow-md"
+                    />
+                    <button
+                      onClick={() => setImagePreview(null)}
+                      className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                )}
+                {fileName && (
+                  <div className="flex items-center justify-between bg-white px-3 py-2 rounded border text-sm text-gray-700 shadow">
+                    <span>{fileName}</span>
+                    <button
+                      onClick={() => setFileName("")}
+                      className="text-red-500 hover:underline text-xs"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                )}
               </div>
             )}
-            {fileName && (
-              <div className="flex items-center justify-between bg-white px-3 py-2 rounded border text-sm text-gray-700 shadow">
-                <span>{fileName}</span>
-                <button
-                  onClick={() => setFileName("")}
-                  className="text-red-500 hover:underline text-xs"
-                >
-                  Remove
-                </button>
+
+            {/* Emoji Picker */}
+            {showEmojiPicker && (
+              <div className="absolute bottom-32 right-8 z-20 scale-90 w-[280px] drop-shadow-lg">
+                <EmojiPicker onEmojiClick={onEmojiClick} />
               </div>
             )}
+
+            {/* Toolbar */}
+            <div className="flex items-center text-gray-500 gap-3 pt-2">
+              {/* Image Upload */}
+              <input
+                type="file"
+                accept="image/*"
+                ref={imageInputRef}
+                onChange={handleImageChange}
+                className="hidden"
+              />
+              <button
+                onClick={handleImageClick}
+                title="Upload Image"
+                className="p-2 rounded-full hover:bg-violet-100 transition"
+              >
+                <i className="ri-image-line text-xl"></i>
+              </button>
+
+              {/* File Upload */}
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                className="hidden"
+              />
+              <button
+                onClick={handleFileClick}
+                title="Attach File"
+                className="p-2 rounded-full hover:bg-violet-100 transition"
+              >
+                <i className="ri-attachment-line text-xl"></i>
+              </button>
+
+              {/* Emoji */}
+              <div className="ml-auto">
+                <button
+                  onClick={() => setShowEmojiPicker((prev) => !prev)}
+                  title="Emoji"
+                  className="p-2 rounded-full hover:bg-violet-100 transition"
+                >
+                  <i className="ri-emoji-sticker-fill text-xl"></i>
+                </button>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex justify-end gap-3 pt-5 border-t">
+              <button className="px-5 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm">
+                Cancel
+              </button>
+              <button className="px-5 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold hover:from-violet-700 hover:to-purple-700 transition transform hover:scale-105 shadow-md">
+                Publish 🚀
+              </button>
+            </div>
           </div>
-        )}
-
-        {/* Emoji Picker */}
-        {showEmojiPicker && (
-          <div className="absolute bottom-32 right-8 z-20 scale-90 w-[280px] drop-shadow-lg">
-            <EmojiPicker onEmojiClick={onEmojiClick} />
-          </div>
-        )}
-
-        {/* Toolbar */}
-        <div className="flex items-center text-gray-500 gap-3 pt-2">
-          {/* Image Upload */}
-          <input
-            type="file"
-            accept="image/*"
-            ref={imageInputRef}
-            onChange={handleImageChange}
-            className="hidden"
-          />
-          <button
-            onClick={handleImageClick}
-            title="Upload Image"
-            className="p-2 rounded-full hover:bg-violet-100 transition"
-          >
-            <i className="ri-image-line text-xl"></i>
-          </button>
-
-          {/* File Upload */}
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            className="hidden"
-          />
-          <button
-            onClick={handleFileClick}
-            title="Attach File"
-            className="p-2 rounded-full hover:bg-violet-100 transition"
-          >
-            <i className="ri-attachment-line text-xl"></i>
-          </button>
-
-          {/* Emoji */}
-          <div className="ml-auto">
-            <button
-              onClick={() => setShowEmojiPicker((prev) => !prev)}
-              title="Emoji"
-              className="p-2 rounded-full hover:bg-violet-100 transition"
-            >
-              <i className="ri-emoji-sticker-fill text-xl"></i>
-            </button>
-          </div>
-        </div>
-
-        {/* Actions */}
-        <div className="flex justify-end gap-3 pt-5 border-t">
-          <button className="px-5 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm">
-            Cancel
-          </button>
-          <button className="px-5 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold hover:from-violet-700 hover:to-purple-700 transition transform hover:scale-105 shadow-md">
-            Publish 🚀
-          </button>
         </div>
       </div>
     </div>
-    </>
   );
 };
 

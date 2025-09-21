@@ -133,7 +133,7 @@ const Blogs = () => {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="mt-10 flex justify-center items-center gap-2 px-6 mb-10">
+        <div className="mt-10 flex justify-center items-center gap-2 px-6 mb-10 ">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             className="px-4 py-2 bg-violet-600 text-white rounded-lg disabled:opacity-50"
@@ -146,7 +146,7 @@ const Blogs = () => {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-4 py-2 rounded-lg transition ${
+              className={`px-4 py-2 rounded-lg transition cursor-pointer ${
                 currentPage === i + 1
                   ? "bg-violet-700 text-white shadow-md"
                   : "bg-gray-200 text-gray-700 hover:bg-violet-200"
@@ -160,7 +160,7 @@ const Blogs = () => {
             onClick={() =>
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))
             }
-            className="px-4 py-2 bg-violet-600 text-white rounded-lg disabled:opacity-50"
+            className="px-4 py-2 bg-violet-600 text-white rounded-lg disabled:opacity-50 cursor-pointer"
             disabled={currentPage === totalPages}
           >
             Next

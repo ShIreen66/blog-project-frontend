@@ -1,15 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import HomeFeed from "../pages/user/HomeFeed";
-import Register from "../pages/user/Register";
-import Login from "../pages/user/Login";
-import UserDashboard from "../pages/user/UserDashboard";
-import ProfilePage from "../component/ProfilePage";
-import Follower from "../component/Follower";
-import Following from "../component/Following";
-import Post from "../component/Post";
-import CreatePost from "../component/CreatePost";
-import EditPost from "../component/EditPost";
-import UserSetting from "../pages/user/UserSetting";
+import HomeFeed from "../pages/user/HomeFeed"; //
+import Register from "../pages/user/Register"; //
+import Login from "../pages/user/Login"; //
+import UserDashboard from "../pages/user/UserDashboard"; //
+// import Post from "../component/Post"; //
+import CreatePost from "../component/CreatePost"; //
+import EditPost from "../component/EditPost"; //
+import UserSetting from "../pages/user/UserSetting"; //
+import AllPosts from "../component/AllPosts"; //
+import UserAbout from "../pages/user/UserAbout"; //
+import UserContact from "../pages/user/UserContact"; //
+import UserPosts from "../component/UserPosts"; //
+import ProfilePage from "../component/ProfilePage"; //
+import Follower from "../component/Follower"; //
+import Following from "../component/Following"; //
+
 import AdminPosts from "../pages/Admin/AdminPosts";
 import AdminHero from "../pages/Admin/AdminHero";
 import AdminCategories from "../pages/Admin/AdminCategories";
@@ -19,9 +24,7 @@ import AdminAnalytics from "../pages/Admin/AdminAnalytics";
 import AdminSettings from "../pages/Admin/AdminSettings";
 import AdminLogout from "../pages/Admin/AdminLogout";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
-import UserAbout from "../pages/user/UserAbout";
 import SingleBlog from "../pages/user/SingleBlog";
-import UserContact from "../pages/user/UserContact";
 import ProtectedRoute from "../Routes/ProtectedRoute";
 import AdminProtectedRoute from "../Routes/AdminProtectedRoute";
 
@@ -38,11 +41,29 @@ const MainRoute = () => {
 
       {/* Protected User Routes */}
 
-      <Route
+      {/* <Route
         path="/post"
         element={
           <ProtectedRoute>
             <Post />
+          </ProtectedRoute>
+        }
+      /> */}
+
+       <Route
+        path="/post"
+        element={
+          <ProtectedRoute>
+            <UserPosts />
+          </ProtectedRoute>
+        }
+      /> 
+
+        <Route
+        path="/all-posts"
+        element={
+          <ProtectedRoute>
+            <AllPosts />
           </ProtectedRoute>
         }
       />
@@ -83,7 +104,7 @@ const MainRoute = () => {
       >
         <Route path="profile" element={<ProfilePage />}>
           <Route path="follower" element={<Follower />} />
-          <Route path="post" element={<Post />} />
+          <Route path="post" element={<UserPosts />} />
           <Route path="following" element={<Following />} />
         </Route>
       </Route>
